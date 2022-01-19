@@ -7,6 +7,8 @@ import random
 SEED = 203
 random.seed(SEED)
 
+print('SEED set to ',SEED)
+
 NINSTANCES = 10         # Number of random numbers to generate
 
 # Generate uniform random numbers
