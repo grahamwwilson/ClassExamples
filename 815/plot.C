@@ -4,7 +4,8 @@
 // to make more presentable
 //
 
-void plot(string hist="hgau", string hdescriptor="Gaussian", float ymin=0.0, float ymax=1800.0, float xlmin=0.15, float ylmin=0.75){
+void plot(string hist="hgau", string hdescriptor="Gaussian", float ymin=0.0, 
+          float ymax=1800.0, float xlmin=0.15, float ylmin=0.75){
 
 TCanvas *c1 = new TCanvas("c1","multipads",800,600);
 TFile *f = new TFile("histos_random.root");
@@ -35,7 +36,7 @@ st->SetStatFormat("8.6g");
 h->Draw("ehist");
 
 // Add a legend
-const float dx=0.2;
+const float dx=0.25;
 const float dy=0.1;
 TLegend* leg = new TLegend(xlmin,ylmin,xlmin+dx,ylmin+dy);
 leg->SetTextFont(42);
