@@ -28,7 +28,6 @@ gPad->Update();
 
 // Statistics box
 gStyle->SetOptStat("nemr");   // See https://root.cern/doc/v608/classTPaveStats.html
-//gStyle->SetStatFormat("10.8g")
 TPaveStats *st = (TPaveStats*)h->FindObject("stats");
 st->SetLineColor(kBlue);
 st->SetTextColor(kBlue);
