@@ -48,7 +48,7 @@ rg2 = ROOT.TRandom1(4359,4)
 #rg1 = ROOT.TRandom3(4538)
 #rg2 = ROOT.TRandom3(4359)
 
-for i in range(100000):
+for i in range(10000):
 # Generate and check distributions of two uniform random numbers, u ~ Un(0,1)
     u1 = rg1.Rndm()
     u2 = rg2.Rndm()

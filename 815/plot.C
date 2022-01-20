@@ -4,9 +4,7 @@
 // to make more presentable
 //
 
-void plot(string hist="hgau", string hdescriptor="Gaussian", float ymin=0.0, float ymax=18000.0, float xlmin=0.15, float ylmin=0.75){
-
-
+void plot(string hist="hgau", string hdescriptor="Gaussian", float ymin=0.0, float ymax=1800.0, float xlmin=0.15, float ylmin=0.75){
 
 TCanvas *c1 = new TCanvas("c1","multipads",800,600);
 TFile *f = new TFile("histos_random.root");
@@ -28,14 +26,15 @@ h->Draw("ehist");
 gPad->Update();
 
 // Statistics box
-gStyle->SetOptStat("emro");   // See https://root.cern/doc/v608/classTPaveStats.html
-gStyle->SetStatFormat("8.6g");
+gStyle->SetOptStat("nemr");   // See https://root.cern/doc/v608/classTPaveStats.html
+//gStyle->SetStatFormat("10.8g")
 TPaveStats *st = (TPaveStats*)h->FindObject("stats");
 st->SetLineColor(kBlue);
 st->SetTextColor(kBlue);
+st->SetStatFormat("8.6g");
 h->Draw("ehist");
 
-// Also need a legend ...
+// Add a legend
 const float dx=0.2;
 const float dy=0.1;
 TLegend* leg = new TLegend(xlmin,ylmin,xlmin+dx,ylmin+dy);
