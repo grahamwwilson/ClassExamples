@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 root -l -b -q 'plot.C()'
 mv Plot.pdf Plot_Gaussian.pdf
