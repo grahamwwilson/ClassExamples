@@ -1,5 +1,6 @@
 # UniformArgParse.py
 # Illustrate standard uniform random number generator
+# Here we add argument parsing
 import random
 import argparse  
 
@@ -16,8 +17,8 @@ SEED = args.seed
 # Initialize the random number generator using specified seed
 random.seed(SEED)
 
-print('NGEN set to ',NGEN)
-print('SEED set to ',SEED)
+print('NGEN set to',NGEN)
+print('SEED set to',SEED)
 
 # Generate uniform random numbers
 for i in range(NGEN):
