@@ -1,7 +1,8 @@
 # Gaussian.py
 import random
 import math
-from myrandom import *
+#from myrandom import *
+import myrandom
 
 # Illustrate Gaussian random number generator
 
@@ -21,7 +22,7 @@ xxsum = 0.0
 
 # Generate Gaussian (aka Normal) random numbers with specified MEAN, RMS
 for i in range(NINSTANCES):
-    x = NormalVariate(MEAN, RMS)  # this function is in myrandom.py
+    x = myrandom.NormalVariate(MEAN, RMS)  # this function is in myrandom.py
     xsum += x
     xxsum += x*x
     if i < NTOPRINT:
