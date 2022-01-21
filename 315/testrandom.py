@@ -22,6 +22,9 @@
 import ROOT
 import math
 
+#Check ROOT version
+print('ROOT version',ROOT.__version__)
+
 twopie = 8.0*math.atan(1.0)
 
 # Initialize output histogram file
