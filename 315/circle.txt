@@ -1,3 +1,4 @@
 fraction = float(ncircle)/float(NINSTANCES)
 print('fraction ',fraction)
 print('4*fraction ',4.0*fraction)
+
