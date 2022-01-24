@@ -1,2 +1,2 @@
 # ClassExamples
-for 315/615/815/914
+for 315/615/815/914 classes
