@@ -23,7 +23,7 @@ import ROOT
 import math
 
 #Check ROOT version
-print('ROOT version',ROOT.__version__)
+#print('ROOT version',ROOT.__version__)    #Does not work for some reason on PHSX-LLxx cluster
 
 twopie = 8.0*math.atan(1.0)
 
