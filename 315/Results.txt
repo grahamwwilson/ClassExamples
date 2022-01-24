@@ -1,0 +1,25 @@
+Results with N=4,000,000.
+
+seed     k     estimate of pi    % ACTUAL deviation from true value of pi   100.0*(mypi-pi)/pi
+203   3141168    3.141168             -0.0135%
+204   3141936    3.141936             +0.0109%
+206   3140725    3.140725             -0.0276% 
+
+Expectation value of p = pi/4 = 0.7853981633974483
+
+Expectation value of k = N p = 4,000,000*pi/4 = 3141592.65359   
+
+P(X = k) ~ Binomial (Ntrials, k successes) = [N!/( (N-k)! k!)] * p^k (1-p)^(N-k)
+where the term in [] is the binomial coefficient (N k), the number 
+of combinations associated with choosing k values from N.
+
+The statistical uncertainty arising from the variance of the binomial distribution, 
+variance = sd**2 = N p (1-p) = 4,000,000 * pi/4 * (1 - pi/4) 
+
+=> sd = 821.
+
+So this is how much one would expect the results to differ for independent 
+experiments such as those with different random number seeds.
+
+The corresponding statistical uncertainty on k is 821, leading to a 
+fractional uncertainty on pi of 821/3141592.65 = 0.026%.

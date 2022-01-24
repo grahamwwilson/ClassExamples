@@ -31,6 +31,15 @@ for i in range(NINSTANCES):
     if i < NTOPRINT:
         print('Trial ',i,' x = ',x,' y = ',y,' r = ',r)
 
-print('Number of trial random numbers inside circle of radius 1.0 = ',ncircle)
+print('Number of trial (x,y) values are inside the circle of radius 1.0 = ',ncircle)
 
 #Add extra code here from circle.txt
+fraction = float(ncircle)/float(NINSTANCES)
+print('fraction ',fraction)
+print('4*fraction ',4.0*fraction)
+
+mypi = 4.0*fraction
+print('Estimate of pi = ',mypi)
+pcdeviation = 100.0*(mypi - math.pi)/math.pi
+print('This deviates from ',math.pi,' by ',pcdeviation,'%')
+
