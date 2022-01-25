@@ -1,5 +1,6 @@
 Results with N=4,000,000.
-
+                   
+                 4 k/N   
 seed     k     estimate of pi    % ACTUAL deviation from true value of pi   100.0*(mypi-pi)/pi
 203   3141168    3.141168             -0.0135%
 204   3141936    3.141936             +0.0109%
