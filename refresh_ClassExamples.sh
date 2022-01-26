@@ -23,8 +23,10 @@
 echo '$HOME = '$HOME
 echo 'Will delete the '$HOME/ClassExamples 'directory'
 
-#rm -rf $HOME/ClassExamples
+rm -rf $HOME/ClassExamples
+echo 'ClassExamples directory deleted'
 
-#git clone https://github.com/grahamwwilson/ClassExamples.git
+git clone https://github.com/grahamwwilson/ClassExamples.git
+echo 'ClassExamples directory recloned from git'
 
 exit
