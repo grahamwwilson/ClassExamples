@@ -5,7 +5,7 @@ import math
 # Generate random points in a square of side-length 2 centered on (0,0) 
 # and count number of points within 1 of the center.
 
-SEED = 205
+SEED = 206
 random.seed(SEED)
 NINSTANCES = 4000000       # Number of random numbers to generate
 NPRINT = 10
@@ -18,8 +18,10 @@ count = 0
 # Generate uniform random numbers
 for i in range(NINSTANCES):
 # Generate x, y ~ Un(-1,1)
-    x = 2.0*random.random() - 1.0 
-    y = 2.0*random.random() - 1.0
+#    x = 2.0*random.random() - 1.0 
+#    y = 2.0*random.random() - 1.0
+    x = random.uniform(-1.0,1.0)
+    y = random.uniform(-1.0,1.0)    
     r = math.sqrt(x**2 + y**2)
     if i<NPRINT:
         print('trial',i,'x =',x,'y = ',y,'r = ',r)
