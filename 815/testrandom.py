@@ -33,7 +33,8 @@ f = ROOT.TFile("histos_random.root", "recreate");
 # Book histograms
 h1 = ROOT.TH1D("h1","h1",100,0.0,1.0)
 h2 = ROOT.TH1D("h2","h2",100,0.0,1.0)
-hexp = ROOT.TH1D("hexp","hexp",100,0.0,10.0)
+hexp = ROOT.TH1D("hexp","hexp",100,0.0,100.0)
+hexp2 = ROOT.TH1D("hexp2","hexp2",100,0.0,100.0)
 hray = ROOT.TH1D("hray","Rayleigh distribution;r;Entries per 0.05 bin",100,0.0,5.0)
 hgau = ROOT.TH1D("hgau","hgau",100,-10.0,10.0)
 hgaud = ROOT.TH1D("hgaud","hgaud",100,-10.0,10.0)
@@ -63,7 +64,9 @@ for i in range(10000):
 # Illustrate transformation method to produce random variates
 
 # For exponential distribution   (See Press 7.3.1)
-    hexp.Fill(-math.log(u1))
+    TAU = 12.0
+    hexp.Fill(-TAU*math.log(u1))
+    hexp2.Fill(-TAU*math.log(1.0-u1))  #the formula we derived  
 
 # For Rayleigh distribution      (See Press 7.3.5)
     r = float(math.sqrt(-2.0*math.log(u1)))
@@ -96,6 +99,7 @@ c1.Print("h1"+gchoice)
 h2.Draw()
 c1.Print("h2"+gchoice)
 hexp.Draw()
+hexp2.Draw()
 c1.Print("hexp"+gchoice)
 hray.Draw()
 c1.Print("hray"+gchoice)
