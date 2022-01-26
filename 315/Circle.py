@@ -31,15 +31,21 @@ for i in range(NINSTANCES):
     if i < NTOPRINT:
         print('Trial ',i,' x = ',x,' y = ',y,' r = ',r)
 
-print('Number of trial (x,y) values are inside the circle of radius 1.0 = ',ncircle)
+print('Number of trial (x,y) values that are inside the circle of radius 1.0 = ',ncircle)
 
 #Add extra code here from circle.txt
 fraction = float(ncircle)/float(NINSTANCES)
 print('fraction ',fraction)
 print('4*fraction ',4.0*fraction)
 
-mypi = 4.0*fraction
-print('Estimate of pi = ',mypi)
+p = fraction
+dNobs = math.sqrt(float(NINSTANCES)*p*(1.0-p))   # Binomial error on success number (ncircle)
+dp = dNobs/float(NINSTANCES)
+
+mypi = 4.0*p
+dmypi = 4.0*dp
+print('Estimate of pi = ',mypi,' +- ',dmypi)
 pcdeviation = 100.0*(mypi - math.pi)/math.pi
 print('This deviates from ',math.pi,' by ',pcdeviation,'%')
+print('The rel. statistical uncertainty is ',100.0*dmypi/mypi,'%')
 
