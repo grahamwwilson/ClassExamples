@@ -16,8 +16,8 @@
 # cd $HOME
 # pwd
 # ls ClassExamples                       # This is the directory that will be deleted
-# chmod +x refresh_ClassExamples.sh   (This makes $HOME/refresh_ClassExamples.sh executable)
-# ./refresh-ClassExamples.sh          (Runs this code)
+# chmod +x $HOME/refresh_ClassExamples.sh   (This makes $HOME/refresh_ClassExamples.sh executable)
+# $HOME/refresh-ClassExamples.sh          (Runs this code)
 # 
 
 echo '$HOME = '$HOME
