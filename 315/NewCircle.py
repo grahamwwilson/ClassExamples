@@ -6,7 +6,7 @@ import ROOT
 
 # Histogram initialization
 f = ROOT.TFile("histos_Pie.root", "recreate")
-h0 = ROOT.TH1D("h0","h0; Successes",100,264.5,364.5)
+h0 = ROOT.TH1D("h0","h0; Successes",200,264.25,364.25)
 h1 = ROOT.TH1D("h1","h1; Pi Estimate",400,2.6,3.6)
 h2 = ROOT.TH1D("h2","h2; Normalized Deviation",200,-5.0,5.0)
 
