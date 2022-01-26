@@ -23,12 +23,12 @@ import ROOT
 import math
 
 #Check ROOT version
-#print('ROOT version',ROOT.__version__)    #Does not work for some reason on PHSX-LLxx cluster
+print('ROOT version',ROOT.__version__)    #May not work on PHSX-LLxx cluster
 
 twopie = 8.0*math.atan(1.0)
 
 # Initialize output histogram file
-f = ROOT.TFile("histos_random.root", "recreate");
+f = ROOT.TFile("histos_random.root", "recreate")
 
 # Book histograms
 h1 = ROOT.TH1D("h1","h1",100,0.0,1.0)
