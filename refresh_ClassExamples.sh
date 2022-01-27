@@ -24,6 +24,12 @@ cd $HOME
 echo '$HOME = '$HOME
 echo 'Will delete the '$HOME/ClassExamples 'directory'
 
+DATE=`date "+%b-%d-%Y_%T-%Z"`
+echo $DATE
+
+echo 'Making a backup'
+cp -rp $HOME/ClassExamples ClassExamples_${DATE}
+
 rm -rf $HOME/ClassExamples
 echo 'ClassExamples directory deleted'
 
