@@ -10,6 +10,8 @@ Original basic implementation.  With one "experiment".
 Uses Pie.py and its PieEstimate function with 
 a tuple return argument to conduct multiple experiments 
 using ROOT to histogram the results.
+The PiEstimate function is essentially the code of Circle.py refactored 
+into its own function.
 
 ## ntCircle.py
 Uses PieNamedTuple.py and its PieEstimate function based on the 
