@@ -1,24 +1,24 @@
 # ClassExamples/MC-Pi
 
-##Monte Carlo calculation of pi
+## Monte Carlo calculation of pi
 Several implementations with improving functionality.
 
-##Circle.py
+## Circle.py
 Original basic implementation.  With one "experiment".
 
-##NewCircle.py
+## NewCircle.py
 Uses Pie.py and its PieEstimate function with 
 a tuple return argument to conduct multiple experiments 
 using ROOT to histogram the results.
 
-##ntCircle.py
+## ntCircle.py
 Uses PieNamedTuple.py and its PieEstimate function based on the 
 NamedTuple module of the typing package to conduct multiple experiments.
 This returns an Estimator class and ROOT is used 
 to histogram the results. This is provided in case you have version 
 compatibility issues with DataClasses (see below) which I recommend.
 
-##dcCircle.py
+## dcCircle.py
 Uses PieDataClass.py and its PieEstimate function based on the 
 dataclass module of the dataclasses package to conduct multiple experiments.
 This returns an Estimator class and ROOT is used 
