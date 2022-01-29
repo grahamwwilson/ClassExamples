@@ -32,6 +32,8 @@ echo 'Making a backup'
 cp -rp $HOME/ClassExamples ClassExamples_${DATE}
 tar -zcvf ClassExamples_${DATE}.tar.gz ClassExamples_${DATE}
 
+sleep 2
+
 rm -rf $HOME/ClassExamples
 echo 'ClassExamples directory deleted'
 
