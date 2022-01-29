@@ -30,7 +30,7 @@ echo $DATE
 
 echo 'Making a compressed date-stamped backup file'
 cp -rp $HOME/ClassExamples ClassExamples_${DATE}
-tar -zcvf OurBackup.tar.gz ClassExamples_${DATE}
+tar -zcf OurBackup.tar.gz ClassExamples_${DATE}
 mv OurBackup.tar.gz ClassExamples_${DATE}.tar.gz
 rm -rf ClassExamples_${DATE}
 echo 'with name 'ClassExamples_${DATE}.tar.gz
