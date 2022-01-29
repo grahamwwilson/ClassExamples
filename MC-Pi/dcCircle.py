@@ -5,7 +5,7 @@ from PieDataClass import PiEstimate
 import ROOT
 
 # Histogram initialization
-f = ROOT.TFile("histos_Pie.root", "recreate")
+f = ROOT.TFile("histos-Pie.root", "recreate")
 h0 = ROOT.TH1D("h0","h0; Successes",200,264.25,364.25)
 #h0 = ROOT.TH1D("h0","h0; Successes",200,2640.5,3640.5)
 h1 = ROOT.TH1D("h1","h1; Pi Estimate",400,2.6,3.6)

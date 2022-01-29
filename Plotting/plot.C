@@ -8,7 +8,7 @@ void plot(string hist="hgau", string hdescriptor="Gaussian", float ymin=0.0,
           float ymax=1800.0, float xlmin=0.15, float ylmin=0.75){
 
 TCanvas *c1 = new TCanvas("c1","multipads",800,600);
-TFile *f = new TFile("histos_random.root");
+TFile *f = new TFile("histos-random.root");
 
 TH1D * h = (TH1D*)f->Get(hist.c_str());
 h->GetYaxis()->SetTitleOffset(1.4);

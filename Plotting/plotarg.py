@@ -7,16 +7,16 @@ from ROOT import TCanvas,TFile,gROOT
 import argparse
 
 parser = argparse.ArgumentParser(description='Plot histogram from file')
-parser.add_argument("-hid", "--histid", type=str, default="hgau", help="Histogram ID string")
-parser.add_argument("-y0", "--ymin", type=float, default=0.0, help="ymin")
-parser.add_argument("-y1", "--ymax", type=float, default=1800.0, help="ymax")
+parser.add_argument("-hid", "--hid", type=str, default="hgau", help="Histogram ID string")
+parser.add_argument("-y0", "--ymn", type=float, default=0.0, help="ymin")
+parser.add_argument("-y1", "--ymx", type=float, default=1800.0, help="ymax")
 
 args=parser.parse_args()
 print('Found argument list: ',args)
 
-hist = args.histid
-ymin = args.ymin
-ymax = args.ymax
+hist = args.hid
+ymin = args.ymn
+ymax = args.ymx
 
 #hist = "hgau"
 #ymin = 0.0
@@ -28,7 +28,7 @@ c.SetTicks(1,1)
 c.SetGrid()
 
 # Define input file and see contents
-f = TFile("histos_random.root")
+f = TFile("histos-random.root")
 f.ls()
 
 # Retrieve specified histogram file and customize graphics

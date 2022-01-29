@@ -15,7 +15,7 @@ c.SetTicks(1,1)
 c.SetGrid()
 
 # Define input file and see contents
-f = TFile("histos_random.root")
+f = TFile("histos-random.root")
 f.ls()
 
 # Retrieve specified histogram file and customize graphics

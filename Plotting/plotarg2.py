@@ -12,7 +12,7 @@ parser = argparse.ArgumentParser(description='Plot histogram from ROOT file and 
 parser.add_argument("-hid", "--hid", type=str, default="h1", help="Histogram ID string")
 parser.add_argument("-y0", "--ymn", type=float, default=0.0, help="ymin")
 parser.add_argument("-y1", "--ymx", type=float, default=600.0, help="ymax")
-parser.add_argument("-f", "--file", type=str, default="histos_Pie.root", help="ROOT input file")
+parser.add_argument("-f", "--file", type=str, default="histos-Pie.root", help="ROOT input file")
 parser.add_argument("-t", "--htit", type=str, default="My Histogram Title", help="histogram title")
 
 args=parser.parse_args()
