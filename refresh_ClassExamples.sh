@@ -9,7 +9,7 @@
 #
 # This means that ANY files that you created or modified 
 # in ClassExamples AND its subdirectories/folders MAY be deleted.
-# The code now does a backup.
+# The code now does a backup and compresses it with tar.
 #
 # Suggested usage (first time around)
 # echo $HOME
@@ -28,11 +28,12 @@ echo 'Will delete the '$HOME/ClassExamples 'directory'
 DATE=`date "+%b-%d-%Y_%T-%Z"`
 echo $DATE
 
-echo 'Making a backup'
+echo 'Making a compressed date-stamped backup file'
 cp -rp $HOME/ClassExamples ClassExamples_${DATE}
-tar -zcvf ClassExamples_${DATE}.tar.gz ClassExamples_${DATE}
-
-sleep 2
+tar -zcvf OurBackup.tar.gz ClassExamples_${DATE}
+mv OurBackup.tar.gz ClassExamples_${DATE}.tar.gz
+rm -rf ClassExamples_${DATE}
+echo 'with name 'ClassExamples_${DATE}.tar.gz
 
 rm -rf $HOME/ClassExamples
 echo 'ClassExamples directory deleted'
