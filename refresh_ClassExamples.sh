@@ -8,7 +8,8 @@
 # of ClassExamples and clones ClassExamples again from git.
 #
 # This means that ANY files that you created or modified 
-# in ClassExamples AND its subdirectories/folders will be deleted.
+# in ClassExamples AND its subdirectories/folders MAY be deleted.
+# The code now does a backup that is then compressed.
 #
 # Suggested usage (first time around)
 # echo $HOME
@@ -29,6 +30,7 @@ echo $DATE
 
 echo 'Making a backup'
 cp -rp $HOME/ClassExamples ClassExamples_${DATE}
+gzip ClassExamples_${DATE}
 
 rm -rf $HOME/ClassExamples
 echo 'ClassExamples directory deleted'
