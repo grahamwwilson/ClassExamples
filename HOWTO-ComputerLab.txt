@@ -1,0 +1,50 @@
+315/615/815/914 Computer Lab Setup Notes
+
+1. The computers in the department's computer lab use Linux.
+   They are currently configured with Ubuntu 18.04 LTS. 
+   You can use the computer lab as long as it is not being used by another 
+   class during that class time.
+
+2. You can login to each computer with your KU username and password, 
+   but each computer has its own local environment. 
+   So the class policy is that you should pick a seat and stick to it 
+   to avoid the need to reconfigure more than one machine.
+   
+3. To open a terminal window you can do CTRL-ALT-T. (a keyboard shortcut)
+
+4. The following steps are to set up an up-to-date python 
+   environment with ROOT, matplotlib, numpy, scipy using "conda" from the 
+   terminal window. This assumes that you have never used these machines before.
+
+  0) $  cd $HOME; pwd          # Makes sure you are in your home directory (/home/yourusername)
+  
+  a) $  echo $ROOTSYS          # Checks if you currently have a version of ROOT enabled.
+        If blank - then you can proceed. Otherwise let me know.
+        (some of you have something like ". /opt/root/bin/thisroot.sh" 
+         that needs to be commented out of your .bashrc file and reinitialization redone)
+
+  b) $  /opt/cond/bin/conda init bash # Initialize account to use conda (only need to do once)
+  
+  c) $  . .bashrc             # Runs initialization script again (same as logging out and back in)
+  
+  d) $  conda create -n rootenv # creates conda environment 
+     $  conda activate rootenv  # activate the rootenv conda environment
+     $  conda install -c conda-forge root matplotlib scipy   # Takes about 10 minutes - maybe longer.
+     
+  e) Update your .bashrc to activate the conda rootenv automatically
+     $  gedit .bashrc &       # Open the file with the gedit editor ... be careful not to make mistakes.
+     At the bottom of the file after the line with 
+     # <<< conda initialize <<<               
+     
+     Add the line:
+     source activate rootenv
+     
+     and save the .bashrc file, and exit from the editor.
+     
+  f) $  . .bashrc             # Runs initialization script again (same as logging out and back in)   
+     
+   At this point your prompt should say (rootenv), and you should be able to run all the 
+   examples in the ClassExamples git repository. If not let me know. There could still be some issues. 
+   With these changes you should always be in the same configuration, and will not need to 
+   do these steps again, on subsequent logins. 
+
