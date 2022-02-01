@@ -23,7 +23,7 @@
         (some of you have something like ". /opt/root/bin/thisroot.sh" 
          that needs to be commented out of your .bashrc file and reinitialization redone)
 
-  b) $  /opt/cond/bin/conda init bash # Initialize account to use conda (only need to do once)
+  b) $  /opt/conda/bin/conda init bash # Initialize account to use conda (only need to do once)
   
   c) $  . .bashrc             # Runs initialization script again (same as logging out and back in)
   
