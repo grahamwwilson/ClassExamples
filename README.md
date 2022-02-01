@@ -13,3 +13,5 @@ are in Tests directory
 
 ## Monte Carlo Calculation of Pi
 See MC-Pi directory for examples
+
+## Also HOWTO Computer lab setup added
