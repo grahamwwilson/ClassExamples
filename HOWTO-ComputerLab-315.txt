@@ -1,4 +1,4 @@
-315/615/815/914 Computer Lab Setup Notes
+315 Computer Lab Setup Notes
 
 1. The computers in the department's computer lab use Linux.
    They are currently configured with Ubuntu 18.04 LTS. 
@@ -14,22 +14,25 @@
 
 4. The following steps are to set up an up-to-date python 
    environment with ROOT, matplotlib, numpy, scipy using "conda" from the 
-   terminal window. This assumes that you have never used these machines before 
-   and do not have ROOT or conda activated.
-   See separate "315 instructions" if you already have ROOT and conda activated.
+   terminal window. These "315 instructions" assume that you already have 
+   ROOT and conda activated (the case for Andrew and Julia).
+   See separate instructions if you have not installed ROOT or conda 
+   in your configuration (Gabriel's case).
 
   0) $  cd $HOME; pwd          # Makes sure you are in your home directory (/home/yourusername)
   
   a) $  echo $ROOTSYS          # Checks if you currently have a version of ROOT enabled.
-        If blank - then you can proceed. Otherwise let me know.
-        (some of you have something like ". /opt/root/bin/thisroot.sh" 
-         that needs to be commented out of your .bashrc file and reinitialization redone)
-
-  b) $  /opt/conda/bin/conda init bash # Initialize account to use conda (only need to do once)
+        Assuming this is not blank you need to edit your .bashrc file and 
+        comment out lines like
+        ". /opt/root/bin/thisroot.sh" at the bottom. Just add a # at the start of the active line. 
+   
+  b) $ gedit .bashrc &        # Open and edit the file with the gedit editor ... be careful not to make mistakes.
   
   c) $  . .bashrc             # Runs initialization script again (same as logging out and back in)
   
-  d) $  conda create -n rootenv # creates conda environment 
+  d) You should be in the (base) conda environment. If not do $ conda activate
+  
+  e) $  conda create -n rootenv # creates new conda environment named rootenv
      $  conda activate rootenv  # activate the rootenv conda environment
      $  conda install -c conda-forge root matplotlib scipy   # Takes about 10 minutes - maybe longer.
      
