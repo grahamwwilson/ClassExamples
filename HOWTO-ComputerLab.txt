@@ -46,7 +46,7 @@
   f) $  . .bashrc             # Runs initialization script again (same as logging out and back in)   
      
    At this point your prompt should say (rootenv), and you should be able to run all the 
-   examples in the ClassExamples git repository. If not let me know. There could still be some issues. 
-   With these changes you should always be in the same configuration, and will not need to 
-   do these steps again, on subsequent logins. 
+   examples in the ClassExamples git repository. If not let me know. With these changes you 
+   should always be in the same configuration, and will not need to do these 
+   steps again, on subsequent logins. 
 
