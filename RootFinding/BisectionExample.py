@@ -44,10 +44,11 @@ while abs(dx) > tol:
     fmid = f(xmid)
     
     if (fmin > 0.0 and fmid < 0.0) or (fmin < 0.0 and fmid > 0.0):
-# bracketed 
+# update bracket to [xmin, xmid] 
        xmax = xmid
        dx = xmax - xmin
     elif (fmax > 0.0 and fmid < 0.0) or (fmax < 0.0 and fmid > 0.0):
+# update bracket to [xmid, xmax]    
        xmin = xmid
        dx = xmax - xmin
     else:
@@ -65,7 +66,7 @@ if errorcode == 0:
     print()
     print('Final bracketing interval ',xmin,xmax,' of length ',dx,' with x:',xmid,'f(x):',f(xmid))
     print('Total number of iterations = ',niterations)
+    print('deviation = estimate - true-value =',xmid - math.pi)    
 else:
     print()
-    print('Error occurred: errorcode ',errorcode)    
-    print('deviation = estimate - true-value =',xmid - math.pi)
+    print('Error occurred: errorcode ',errorcode)
