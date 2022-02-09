@@ -24,20 +24,23 @@ fmin = f(xmin)
 fmax = f(xmax)
 fab = fmin*fmax
 
+errorcode = 0
+
 if fab < 0.0:
-   print('Function is bracketed. Yay !',fmin,fmax)
+   print('Function zero is bracketed. Yay !',fmin,fmax)
 elif fab > 0.0:
-   print('Function is not bracketed ... ',fmin,fmax)
+   print('Function zero is not bracketed. Are you sure there should be a root here?',fmin,fmax)
+   errorcode += 1
 else:
-   print('One of the end-points likely is a root ...',fmin,fmax)   
+   print('One of the end-points likely is a root ...',fmin,fmax)
+   errorcode += 2
 
 # let's try bi-section
 dx = xmax - xmin
 
 niterations = 0
-errorcode = 0
 
-while abs(dx) > tol:
+while (errorcode == 0 and abs(dx) > tol):
     fmin = f(xmin)
     fmax = f(xmax)
     xmid = (xmin+xmax)/2.0
@@ -58,7 +61,7 @@ while abs(dx) > tol:
     print('Iteration ',niterations,'Updated bracketing interval  ',xmin,xmax,' of length ',dx)
     if niterations >= 100:
        print('Too many iterations - need to run again with looser tolerance requirement - will exit')
-       errorcode += 1
+       errorcode += 4
        break
         
 if errorcode == 0:        
