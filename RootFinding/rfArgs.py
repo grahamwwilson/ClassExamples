@@ -11,13 +11,13 @@ def getArgs(argv=None):
     parser.add_argument("-t", "--tol", type=float, default=1.0e-15, help="Tolerance on x")         
          
     args=parser.parse_args(argv)
-    print('Found argument list: ',args)
+    print('(rfArgs.getArgs     ) Found argument list: ',args)
     
     return args
     
 def showArgs(a,b,tol):
 # Check these are what we want
-    print('Program has set')
+    print('(rfArgs.ShowArgs    ) Program has set')
     print('a:   ',a)
     print('b:   ',b)
     print('tol: ',tol)
@@ -30,7 +30,7 @@ def getArguments(argv=None):
 
     args = getArgs(argv)
 
-    print('Assigning arguments to program variables')
+    print('(rfArgs.getArguments) Assigning arguments to program variables')
     
     a = args.a
     b = args.b
