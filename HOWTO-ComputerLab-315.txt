@@ -17,7 +17,7 @@
    terminal window. These "315 instructions" assume that you already have 
    ROOT and conda activated (the case for Andrew and Julia).
    See separate instructions if you have not installed ROOT or conda 
-   in your configuration (Gabriel's case).
+   in your configuration (Gabriel and Seth's case).
 
   0) $  cd $HOME; pwd          # Makes sure you are in your home directory (/home/yourusername)
   
