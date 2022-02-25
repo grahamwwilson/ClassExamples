@@ -3,16 +3,15 @@
 # For N=2, the formula is (dx/3) (f0 + 4f1 + 2f2 + 4f3 +f4)
 import math
 import myPythonCheck
-import quadArgs
+import quadsArgs
 
 def f(x):
     f = x**2*(math.cos(x))**4
     return f
 
-myPythonCheck.Check()                     # Enforce use of python3
-
-N,a,b = quadArgs.getArguments(None)           # Read command line arguments 
-quadArgs.showArgs(N,a,b)                      # for bracketing interval (a,b) and tolerance |x - x_root|.
+myPythonCheck.Check()                          # Enforce use of python3
+N,a,b = quadsArgs.getArguments(None)           # Read command line arguments 
+quadsArgs.showArgs(N,a,b)                      # for numerical integration
 
 Iexact = math.pi* ( (math.pi)**2 + (17.0/32.0))
 print('Exact value of integral = ',Iexact)

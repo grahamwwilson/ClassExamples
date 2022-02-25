@@ -1,4 +1,4 @@
-# quadArgs.py
+# quadsArgs.py
 from argparse import ArgumentParser
 import math
 
@@ -6,19 +6,19 @@ import math
 
 def getArgs(argv=None):
 # Set command line configurable parameters. Do python3 program.py -h to see this in action.
-    parser = ArgumentParser(description="Numerical integration")
-    parser.add_argument("-n", "--n", type=int, default=100, help="Number of intervals/strips (N)")
+    parser = ArgumentParser(description="Numerical integration by Simpson's method")
+    parser.add_argument("-n", "--n", type=int, default=100, help="Half-number of strips (N)")
     parser.add_argument("-a", "--a", type=float, default=0.0, help="Lower limit of integration")
     parser.add_argument("-b", "--b", type=float, default=2.0*math.pi, help="Upper limit of integration")
          
     args=parser.parse_args(argv)
-    print('(quadArgs.getArgs     ) Found argument list: ',args)
+    print('(quadsArgs.getArgs     ) Found argument list: ',args)
     
     return args
     
 def showArgs(N,a,b):
 # Check these are what we want
-    print('(quadArgs.ShowArgs    ) Program has set')
+    print('(quadsArgs.ShowArgs    ) Program has set')
     print('N:   ',N)
     print('a:   ',a)
     print('b:   ',b)
@@ -31,7 +31,7 @@ def getArguments(argv=None):
 
     args = getArgs(argv)
 
-    print('(quadArgs.getArguments) Assigning arguments to program variables')
+    print('(quadsArgs.getArguments) Assigning arguments to program variables')
     
     N = args.n
     a = args.a
