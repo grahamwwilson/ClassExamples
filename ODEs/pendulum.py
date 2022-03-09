@@ -16,15 +16,15 @@ def Energy(y, parameters):
     return E
 
 myPythonCheck.Check()                                             # Enforce use of python3
-angle, omega, g, l, dt, sMethod = pendArgs.getArguments(None)     # Read command line arguments 
-pendArgs.showArgs(angle, omega, g, l, dt, sMethod)                # for pendulum ODE
+theta, omega, g, l, dt, sMethod = pendArgs.getArguments(None)     # Read command line arguments 
+pendArgs.showArgs(theta, omega, g, l, dt, sMethod)                # for pendulum ODE
 
 # Write as state-vector, y = (theta, omega)
 # With two coupled ordinary differential equations
 #  dy0/dt = dtheta/dt = omega
 #  dy1/dt = domega/dt = (-g/l) sin(theta)
 
-y0 = np.array( [ angle, omega ])
+y0 = np.array( [ theta, omega ])
 y  = np.copy(y0)   # Set initial values
 
 t = 0.0
@@ -35,7 +35,7 @@ E0 = Energy(y, parameters)
 istep = 0
 t = 0.0
 yprev = y
-while t <= 20.0:
+while t <= 5.0:
     yprev = y; tprev = t
 # Calculate new position and velocity of projectile using chosen method
     y, t, istep = myStepper.Stepper(y, dt, parameters, istep, sMethod)

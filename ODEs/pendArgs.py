@@ -11,7 +11,7 @@ def getArgs(argv=None):
     parser.add_argument("-w", "--w",  type=float, default=0.0,  help="Initial angular velocity (rad/s)")    
     parser.add_argument("-g", "--g",  type=float, default=9.80, help="Acceleration due to gravity (m/s^2)")
     parser.add_argument("-l", "--l",  type=float, default=1.2,  help="Pendulum length (m)")    
-    parser.add_argument("-d", "--dt", type=float, default=0.1,  help="Time-step (s)")
+    parser.add_argument("-d", "--dt", type=float, default=0.01,  help="Time-step (s)")
     parser.add_argument("-s", "--s",  type=int,   default=2,    help="Stepper Method (0=Euler, 2=RK2)")       
        
     args=parser.parse_args(argv)

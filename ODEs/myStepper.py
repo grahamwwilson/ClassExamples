@@ -1,4 +1,4 @@
-# myStepper4.py
+# myStepper.py
 import math
 import numpy as np
 
