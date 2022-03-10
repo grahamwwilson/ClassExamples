@@ -10,6 +10,11 @@ Do python3 pendulum.py -h to see command line arguments.
 With default arguments, writes an output file called pendulum.dat 
 that can be used for example for plots.
 
+## pendulumODE.py
+Module with functions used in both pendulum.py and stepper.py for 
+this specific ODE problem. Functions include 
+calcGradients, Energy, PrintState, PrintHeader, PrintStep.
+
 ## pendArgs.py
 Used for passing arguments
 

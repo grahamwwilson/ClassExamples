@@ -1,26 +1,13 @@
 # stepper.py
 import math
 import numpy as np
+from pendulumODE import calcGradients    # RHS evaluation now in its own problem specific module
 
 # Steppers are written with notation as in Numerical Recipes
 # To implement RK4 should be straightforward for you  
 # to take RK2 and implement RK4
 # (EulerP and RK2P below are provided because they are arguably 
 #  more understandable - but a little harder to extend - feel free to ignore).
-
-def calcGradients(y, parameters):
-#
-# Evaluate RHS vector of gradients at time associated with the state vector, y
-# where the components are y[0] = theta, y[1] = omega
-#
-
-    g = parameters[0]
-    l = parameters[1]
-    theta  = y[0]
-    omega  = y[1]
-
-    gradients = np.array( [ omega, (-g/l)*math.sin(theta) ])
-    return gradients
     
 def Euler(y, dt, parameters, istep):
 # Numerical Recipes Equation 17.1.1
