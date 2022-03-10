@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import myPythonCheck
 import pendArgs
 import math
-import myStepper
+import stepper
 
 #
 # Solve the initial-value problem ODE for a simple pendulum. 
@@ -54,7 +54,7 @@ print(istep, t, y[0], y[1], Energy(y,parameters)/E0, file=ofile)
 while t < tMax:
     yprev = y; tprev = t
 # Calculate new position and velocity of projectile using chosen method
-    y, t, istep = myStepper.Stepper(y, dt, parameters, istep, sMethod)
+    y, t, istep = stepper.Stepper(y, dt, parameters, istep, sMethod)
     print(istep, t, y[0], y[1], Energy(y,parameters)/E0, file=ofile)    
 
 print()

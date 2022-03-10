@@ -13,10 +13,11 @@ that can be used for example for plots.
 ## pendArgs.py
 Used for passing arguments
 
-## myStepper.py
+## stepper.py
 Generic stepping algorithms 
 and RHS gradient calculations for this simple pendulum problem. 
-You should code up RK4 yourself.
+You should code up RK4 yourself. You could also add error estimates 
+and adaptive step-size control.
 
 ## plot.py
 python3 plot.py
