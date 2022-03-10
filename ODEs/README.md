@@ -1,5 +1,5 @@
 # ClassExamples/ODEs
-Example for implementing ODEs
+Simple example for implementing ODEs
 
 ## pendulum.py
 
@@ -14,4 +14,11 @@ that can be used for example for plots.
 Used for passing arguments
 
 ## myStepper.py
-Stepping algorithms and RHS gradient calculations
+Generic stepping algorithms 
+and RHS gradient calculations for this simple pendulum problem. 
+You should code up RK4 yourself.
+
+## plot.py
+python3 plot.py
+
+Plots some of the data from pendulum.dat using matplotlib
