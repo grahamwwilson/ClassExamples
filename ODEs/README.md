@@ -19,10 +19,12 @@ calcGradients, Energy, PrintState, PrintHeader, PrintStep.
 Used for passing arguments
 
 ## stepper.py
-Generic stepping algorithms 
-and RHS gradient calculations for this simple pendulum problem. 
+Generic stepping algorithms. 
 You should code up RK4 yourself. You could also add error estimates 
 and adaptive step-size control.
+These can be applied (YMMV) to any ODE by providing 
+a suitable calcGradients function to evaluate the RHS of the ODE system.
+It is currently configured to use pendulumODE.calcGradients.
 
 ## plot.py
 python3 plot.py
