@@ -26,7 +26,7 @@ def Euler(y, dt, parameters, istep):
 # Numerical Recipes Equation 17.1.1
      
     t = istep*dt
-    print('Pre-step:  ',t,istep,'y = ',y)
+#    print('Pre-step:  ',t,istep,'y = ',y)
     
     grad1 = calcGradients(y, parameters)    
     k1 = grad1*dt
@@ -36,7 +36,7 @@ def Euler(y, dt, parameters, istep):
     istep += 1
     t = istep*dt
     
-    print('Post-step: ',t,istep,'y = ',y)    
+#    print('Post-step: ',t,istep,'y = ',y)    
     return y, t, istep
     
 def RK2(y, dt, parameters, istep):
@@ -44,7 +44,7 @@ def RK2(y, dt, parameters, istep):
 # Rewrite RK2 with same notation as RK4
      
     t = istep*dt
-    print('Pre-step:  ',t,istep,'y = ',y)
+#    print('Pre-step:  ',t,istep,'y = ',y)
 
     grad1 = calcGradients(y, parameters)
     k1 = grad1*dt
@@ -58,7 +58,7 @@ def RK2(y, dt, parameters, istep):
     istep += 1
     t = istep*dt
     
-    print('Post-step: ',t,istep,'y = ',y)    
+#    print('Post-step: ',t,istep,'y = ',y)    
     return y, t, istep            
       
 def EulerP(y, dt, parameters, istep):
