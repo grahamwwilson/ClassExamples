@@ -58,16 +58,11 @@ while t < tMax:
     print(istep, t, y[0], y[1], Energy(y,parameters)/E0, file=ofile)    
 
 print()
-print('Pre-end state  ',tprev, yprev)
-print('Pre-end time:  ',tprev,'s  angle:',yprev[0],'rad')
-print('Pre-end speed is  ',yprev[1],' rad/s ')
-print('Pre-end energy ratio ',Energy(yprev,parameters)/E0)
-
-print()
-print('Post-end state ',t,y)
-print('Post-end time: ',t,'s  angle:',y[0],'rad')
-print('Post-end speed is ',y[1],' rad/s ')
-print('Post-end energy ratio ',Energy(y,parameters)/E0)
+print('End state ',t,y)
+print('End time: ',t,'s  angle:',y[0],'rad')
+print('End angular speed is ',y[1],' rad/s ')
+print('End energy ratio ',Energy(y,parameters)/E0)
 print('t,istep',t,istep)
 
 ofile.close()
+
