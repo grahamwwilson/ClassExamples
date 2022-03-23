@@ -15,6 +15,7 @@
 #
 
 import numpy as np
+from scipy import special
 
 def calcGradients(y, parameters):
 #
@@ -29,6 +30,28 @@ def calcGradients(y, parameters):
 
     gradients = np.array( [ omega, (-g/l)*np.sin(theta) ])
     return gradients
+    
+def T0(parameters):
+    g = parameters[0]
+    l = parameters[1]
+    w0sq = g/l
+    T0 = 2.0*np.pi/np.sqrt(w0sq)
+    return T0
+ 
+def Texact(parameters,y0):
+    g = parameters[0]
+    l = parameters[1]
+    theta0 = y0[0]
+    w0sq = g/l
+    T0 = 2.0*np.pi/np.sqrt(w0sq)
+    
+    k = np.sin(0.5*theta0)           # k parameter - related to angular amplitude 
+                                     # at the start of each cycle
+# Calculate corresponding finite amplitude period
+    period = T0*(2.0/np.pi)*special.ellipk(k*k) # Use formula (2) from p3 of 
+                                                # Pendulum Experiment writeup
+
+    return period         
 
 def Energy(y, parameters):
 # Calculate mechanical energy E = K + U for simple pendulum. 
