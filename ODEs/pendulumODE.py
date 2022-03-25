@@ -15,6 +15,7 @@
 #
 
 import numpy as np
+import sys
 from scipy import special   # for scipy.special.ellipk special function 
 # See https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.ellipk.html
 
@@ -87,4 +88,10 @@ def PrintHeaderError(ofile):
     print('#i         t[s]            theta [rad]          omega [rad/s]          Ediff           d(theta)          d(omega) ',file=ofile)    
     
 def PrintStepError(y, y1, y2, parameters, t, istep, E0, ofile):
+#
+# Note that the truncation error may indeed be a factor of 15 less than the 
+# round-off error value of 2.2e-16 but 
+# this implies that the calculation is dominated by round-off error.
+#    eps = sys.float_info.epsilon
+#
     print(istep, t, y[0], y[1], (Energy(y,parameters)/E0)-1.0, (y2[0]-y1[0])/15, (y2[1]-y1[1])/15, file=ofile)    
