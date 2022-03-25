@@ -13,7 +13,8 @@ that can be used for example for plots.
 ## pendulumODE.py
 Module with functions used in both pendulum.py and stepper.py for 
 this specific ODE problem. Functions include 
-calcGradients, Energy, PrintState, PrintHeader, PrintStep.
+calcGradients, T0, Texact, Energy, PrintState, PrintHeader, PrintStep, 
+PrintHeaderError, PrintStepError
 
 ## pendArgs.py
 Used for passing arguments

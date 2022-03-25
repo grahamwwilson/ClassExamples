@@ -15,7 +15,9 @@
 #
 
 import numpy as np
-from scipy import special
+from scipy import special   # for scipy.special.ellipk special function 
+# See https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.ellipk.html
+
 
 def calcGradients(y, parameters):
 #
@@ -41,15 +43,16 @@ def T0(parameters):
 def Texact(parameters,y0):
     g = parameters[0]
     l = parameters[1]
-    theta0 = y0[0]
+    theta0 = y0[0]                            # launch angle assuming initial value is launch
     w0sq = g/l
     T0 = 2.0*np.pi/np.sqrt(w0sq)
     
-    k = np.sin(0.5*theta0)           # k parameter - related to angular amplitude 
-                                     # at the start of each cycle
-# Calculate corresponding finite amplitude period
-    period = T0*(2.0/np.pi)*special.ellipk(k*k) # Use formula (2) from p3 of 
-                                                # Pendulum Experiment writeup
+    k = np.sin(0.5*theta0)                    # k parameter - defined by the angular amplitude
+# Calculate corresponding finite amplitude period using 
+# the complete elliptic integral of the first kind of Legendre form
+    m = k**2                                  # Conform with ellipk parametrization in terms of m
+    period = T0*(2.0/np.pi)*special.ellipk(m) # Use formula (2) from p3 of 
+                                              # Pendulum Experiment writeup (see HW4 link on web page)
 
     return period         
 
@@ -79,3 +82,9 @@ def PrintHeader(ofile):
     
 def PrintStep(y, parameters, t, istep, E0, ofile):
     print(istep, t, y[0], y[1], Energy(y,parameters)/E0, file=ofile)
+    
+def PrintHeaderError(ofile):    
+    print('#i         t[s]            theta [rad]          omega [rad/s]          Ediff           d(theta)          d(omega) ',file=ofile)    
+    
+def PrintStepError(y, y1, y2, parameters, t, istep, E0, ofile):
+    print(istep, t, y[0], y[1], (Energy(y,parameters)/E0)-1.0, (y2[0]-y1[0])/15, (y2[1]-y1[1])/15, file=ofile)    
