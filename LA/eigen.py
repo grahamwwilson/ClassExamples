@@ -3,12 +3,16 @@ import numpy as np
 #A = np.mat("1 2 3; 1 3 4; 3 2 1")
 
 A = np.mat("1 2; 1 3")
+#A = np.array([[1,2],[1,3]])
   
 # Original matrix
 print("A",A.shape)
 print(A)
 print("")
 evalue, evect = np.linalg.eig(A)
+
+print("Eigenvalue type",type(evalue))
+print("Eigenvector type",type(evect))
   
 # Eigenvalues of the matrix"
 print("evalue",evalue.shape)

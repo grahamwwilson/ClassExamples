@@ -1,3 +1,4 @@
+# Solution of A x = b
 import numpy as np
 from scipy import linalg
 
