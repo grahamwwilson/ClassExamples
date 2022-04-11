@@ -1,4 +1,4 @@
-# Solve eignevalue problem
+# Solve eigenvalue problem
 #
 #   A x = lambda x
 # 
