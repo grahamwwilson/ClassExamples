@@ -23,7 +23,9 @@ print(x)
 print()
 
 # Double-check that x is indeed a solution of A x = b
-c = np.dot(A,x)
+#c = np.dot(A,x)
+#c = A@x
+c = np.matmul(A,x)
 print("c:",c.shape)
 print(c)
 print()
