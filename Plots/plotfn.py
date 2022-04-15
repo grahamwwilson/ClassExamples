@@ -20,10 +20,24 @@ def PlotData(ifigure, x, y, dy, title, xlabel, ylabel):
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
     
-def PlotDataModel(ifigure, x, y, dy, ymodel, title, xlabel, ylabel, mycolor='red'):
+def PlotDataModel(ifigure, x, y, dy, ymodel, title, xlabel, ylabel):
     plt.figure(ifigure)
     plt.errorbar(x, y, dy, fmt="o",color='blue',solid_capstyle='projecting',capsize=0,markersize=4)
+    plt.plot(x, ymodel, color='red')    
+    plt.title(title)
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel) 
+    
+def PlotModel(ifigure, x, ymodel, title, xlabel, ylabel):
+    plt.figure(ifigure)
+    plt.plot(x, ymodel, color='blue')    
+    plt.title(title)
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+    
+def PlotModel2(ifigure, x, ymodel, title, xlabel, ylabel, mycolor='blue'):
+    plt.figure(ifigure)
     plt.plot(x, ymodel, color=mycolor)    
     plt.title(title)
     plt.xlabel(xlabel)
-    plt.ylabel(ylabel)    
+    plt.ylabel(ylabel)
