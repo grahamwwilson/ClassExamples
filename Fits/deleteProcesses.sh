@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # 
 # Kill all python3 processs launched by me
 #
@@ -8,12 +8,16 @@ echo 'Found uid of '${uid}
 
 ofile=processes.txt
 
-ps -l | grep "$uid" | grep "python3" | cut -d " " -f6 > ${ofile}
+ps -l | grep "$uid" | grep "python3" > ${ofile}
 
-for pid in $(cat ${ofile})
-do
-   kill -9 ${pid}
-done
+while read -r line
+   do
+      echo "$line"
+      read -ra array <<<"$line"
+      pid=${array[3]}
+      echo 'Killing pid = '${pid}
+      kill -9 ${pid}
+   done < "$ofile"
 
 rm ${ofile}
 
