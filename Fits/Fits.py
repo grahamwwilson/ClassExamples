@@ -35,7 +35,7 @@ plotfn.PlotModel2(1, x, model1, 'Measurements.dat with model 1', 'x', 'y', 'mage
 plotfn.PlotModel2(2, x, model2, 'Measurements.dat with model 2', 'x', 'y', 'red')
 plotfn.PlotModel2(3, x, model3, 'Measurements.dat with model 3', 'x', 'y', 'black')
 plotfn.PlotModel2(4, x, model4, 'Measurements.dat with model 4', 'x', 'y', 'cyan')
-plotfn.PlotModel2(5, x, model5, 'Measurements.dat with model 5', 'x', 'y', 'green')
+plotfn.PlotModel2(5, x, model5, 'Measurements.dat with model 5', 'x', 'y', 'lime')
 
 # Show all HW3 fits together
 plotfn.PlotDataWithGrid(6, x, y, dy, 'Measurements.dat', 'x', 'y')
@@ -47,7 +47,7 @@ plotfn.PlotModel2(6, x, model3, 'Measurements.dat', 'x', 'y', 'black')
 plotfn.PlotDataWithGrid(7, x, y, dy, 'Measurements.dat', 'x', 'y')
 plotfn.PlotModel2(7, x, model3, 'Measurements.dat', 'x', 'y', 'black')
 plotfn.PlotModel2(7, x, model4, 'Measurements.dat', 'x', 'y', 'cyan')
-plotfn.PlotModel2(7, x, model5, 'Measurements.dat', 'x', 'y', 'green')
+plotfn.PlotModel2(7, x, model5, 'Measurements.dat', 'x', 'y', 'lime')
 
 # And now for total confusion
 plotfn.PlotDataWithGrid(8, x, y, dy, 'Measurements.dat', 'x', 'y')
@@ -55,6 +55,6 @@ plotfn.PlotModel2(8, x, model1, 'Measurements.dat', 'x', 'y', 'magenta')
 plotfn.PlotModel2(8, x, model2, 'Measurements.dat', 'x', 'y', 'red')
 plotfn.PlotModel2(8, x, model3, 'Measurements.dat', 'x', 'y', 'black')
 plotfn.PlotModel2(8, x, model4, 'Measurements.dat', 'x', 'y', 'cyan')
-plotfn.PlotModel2(8, x, model5, 'Measurements.dat', 'x', 'y', 'green')
+plotfn.PlotModel2(8, x, model5, 'Measurements.dat', 'x', 'y', 'lime')
 
 plt.show()
