@@ -1,0 +1,4 @@
+To install iminuit
+
+conda activate rootenv
+conda install -c iminuit
