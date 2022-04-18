@@ -1,0 +1,72 @@
+This output was obtained by doing:
+grep -B4 -A8 "REASONABLE" Fits.log >Fits-CLs.txt
+
+Parameter  a0  is fitted 
+Parameter  a1  is fixed 
+Parameter  a2  is fixed 
+ 
+A) Hypothesis test: IS THIS A REASONABLE FIT? 
+chi-squared                          :  259.5293708306389
+number of data points                :  101
+total number of fit parameters       :  3  of which  1  are/is fitted and  2 are/is fixed
+number of ACTUAL fitted parameters   :  1
+number of degrees of freedom (d.o.f.):  100
+chi-squared ratio is  2.5952937083063894
+ 
+Observed chi-squared p-value of 4.440892098500626e-14 %
+--
+Parameter  a0  is fixed 
+Parameter  a1  is fitted 
+Parameter  a2  is fixed 
+ 
+A) Hypothesis test: IS THIS A REASONABLE FIT? 
+chi-squared                          :  132.88530956687634
+number of data points                :  101
+total number of fit parameters       :  3  of which  1  are/is fitted and  2 are/is fixed
+number of ACTUAL fitted parameters   :  1
+number of degrees of freedom (d.o.f.):  100
+chi-squared ratio is  1.3288530956687634
+ 
+Observed chi-squared p-value of 1.5527606049665188 %
+--
+Parameter  a0  is fixed 
+Parameter  a1  is fixed 
+Parameter  a2  is fitted 
+ 
+A) Hypothesis test: IS THIS A REASONABLE FIT? 
+chi-squared                          :  99.86235561913088
+number of data points                :  101
+total number of fit parameters       :  3  of which  1  are/is fitted and  2 are/is fixed
+number of ACTUAL fitted parameters   :  1
+number of degrees of freedom (d.o.f.):  100
+chi-squared ratio is  0.9986235561913088
+ 
+Observed chi-squared p-value of 48.5070703814033 %
+--
+Parameter  a0  is fitted 
+Parameter  a1  is fitted 
+Parameter  a2  is fixed 
+ 
+A) Hypothesis test: IS THIS A REASONABLE FIT? 
+chi-squared                          :  119.73224315739446
+number of data points                :  101
+total number of fit parameters       :  3  of which  2  are/is fitted and  1 are/is fixed
+number of ACTUAL fitted parameters   :  2
+number of degrees of freedom (d.o.f.):  99
+chi-squared ratio is  1.209416597549439
+ 
+Observed chi-squared p-value of 7.6626420317298045 %
+--
+Parameter  a0  is fitted 
+Parameter  a1  is fitted 
+Parameter  a2  is fitted 
+ 
+A) Hypothesis test: IS THIS A REASONABLE FIT? 
+chi-squared                          :  98.82340898746884
+number of data points                :  101
+total number of fit parameters       :  3  of which  3  are/is fitted and  0 are/is fixed
+number of ACTUAL fitted parameters   :  3
+number of degrees of freedom (d.o.f.):  98
+chi-squared ratio is  1.0084021325251922
+ 
+Observed chi-squared p-value of 45.76880163155591 %
