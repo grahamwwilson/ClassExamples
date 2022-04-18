@@ -17,7 +17,7 @@ def FitModel1(x, y, dy):
     print("Running fitconfig.FitModel1 fit")
     print("-------------------------------")
     print(" ")
-    
+# Model is a single parameter model y(x) = a0
     lsq = MyLeastSquares.LsqDriver(mymodels.quadmodel, x, y, dy)
     m = Minuit(lsq, a0 = 1.0, a1 = 0.0, a2 = 0.0)
     FixParameters(m, ["a1", "a2"])    
@@ -35,7 +35,7 @@ def FitModel2(x, y, dy):
     print("Running fitconfig.FitModel2 fit")
     print("-------------------------------")
     print(" ")
-    
+# Model is a single paramerer model with y(x) = 0.95 + a1*x
     lsq = MyLeastSquares.LsqDriver(mymodels.quadmodel, x, y, dy)
     m = Minuit(lsq, a0 = 0.95, a1 = 0.0, a2 = 0.0)
     FixParameters(m, ["a0", "a2"])    
@@ -53,7 +53,7 @@ def FitModel3(x, y, dy):
     print("Running fitconfig.FitModel3 fit")
     print("-------------------------------")
     print(" ")
-    
+# Model is a single parameter model with y(x) = 0.95 + a2*x**2  
     lsq = MyLeastSquares.LsqDriver(mymodels.quadmodel, x, y, dy)
     m = Minuit(lsq, a0 = 0.95, a1 = 0.0, a2 = 0.0)
     FixParameters(m, ["a0", "a1"])    
@@ -71,7 +71,7 @@ def FitModel4(x, y, dy):
     print("Running fitconfig.FitModel4 fit")
     print("-------------------------------")
     print(" ")
-    
+ # Model is y(x) = a0 + a1*x   (2-parameters)
     lsq = MyLeastSquares.LsqDriver(mymodels.quadmodel, x, y, dy)
     m = Minuit(lsq, a0 = 0.95, a1 = 0.0, a2 = 0.0)
     FixParameters(m, ["a2"])    
@@ -89,7 +89,7 @@ def FitModel5(x, y, dy):
     print("Running fitconfig.FitModel5 fit")
     print("-------------------------------")
     print(" ")
-    
+# Model is y(x) = a0 + a1*x + a2*x**2 (3 parameters)   
     lsq = MyLeastSquares.LsqDriver(mymodels.quadmodel, x, y, dy)
     m = Minuit(lsq, a0 = 1.0, a1 = 0.0, a2 = 0.0)
     GenericFit(m, lsq, len(x))
