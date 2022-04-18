@@ -1,0 +1,361 @@
+[0.   0.01 0.02 0.03 0.04 0.05 0.06 0.07 0.08 0.09 0.1  0.11 0.12 0.13
+ 0.14 0.15 0.16 0.17 0.18 0.19 0.2  0.21 0.22 0.23 0.24 0.25 0.26 0.27
+ 0.28 0.29 0.3  0.31 0.32 0.33 0.34 0.35 0.36 0.37 0.38 0.39 0.4  0.41
+ 0.42 0.43 0.44 0.45 0.46 0.47 0.48 0.49 0.5  0.51 0.52 0.53 0.54 0.55
+ 0.56 0.57 0.58 0.59 0.6  0.61 0.62 0.63 0.64 0.65 0.66 0.67 0.68 0.69
+ 0.7  0.71 0.72 0.73 0.74 0.75 0.76 0.77 0.78 0.79 0.8  0.81 0.82 0.83
+ 0.84 0.85 0.86 0.87 0.88 0.89 0.9  0.91 0.92 0.93 0.94 0.95 0.96 0.97
+ 0.98 0.99 1.  ]
+[0.926325 0.96971  0.95009  0.955206 0.95187  0.955489 0.948445 0.942558
+ 0.947341 0.969659 0.951965 0.94242  0.951153 0.941828 0.949223 0.952463
+ 0.968473 0.952835 0.956279 0.96342  0.929765 0.927791 0.953823 0.963605
+ 0.936358 0.972665 0.974138 0.957116 0.940098 0.957673 0.953816 0.975105
+ 0.991978 0.948143 0.922149 0.967906 0.984774 0.9818   0.941306 0.929977
+ 0.942608 0.949322 0.947338 0.968461 0.938839 0.943155 0.96582  1.002621
+ 0.998085 1.02276  0.950186 0.94154  0.985478 0.987188 1.017391 0.948396
+ 0.989252 0.992005 0.982945 1.01724  0.959989 0.92233  0.98203  0.993264
+ 1.002224 0.95326  1.016583 1.002147 0.97116  1.010215 1.030753 1.006112
+ 1.009042 1.006994 0.991867 0.974559 0.964716 1.034087 1.017693 1.031982
+ 0.987939 1.010792 1.031987 0.988587 1.020014 1.02559  1.088707 1.047256
+ 1.080461 0.985588 1.029908 1.005667 1.055576 1.06287  1.023899 1.070931
+ 1.037347 1.043421 1.044305 1.047342 1.031797]
+[0.01    0.01025 0.0105  0.01075 0.011   0.01125 0.0115  0.01175 0.012
+ 0.01225 0.0125  0.01275 0.013   0.01325 0.0135  0.01375 0.014   0.01425
+ 0.0145  0.01475 0.015   0.01525 0.0155  0.01575 0.016   0.01625 0.0165
+ 0.01675 0.017   0.01725 0.0175  0.01775 0.018   0.01825 0.0185  0.01875
+ 0.019   0.01925 0.0195  0.01975 0.02    0.02025 0.0205  0.02075 0.021
+ 0.02125 0.0215  0.02175 0.022   0.02225 0.0225  0.02275 0.023   0.02325
+ 0.0235  0.02375 0.024   0.02425 0.0245  0.02475 0.025   0.02525 0.0255
+ 0.02575 0.026   0.02625 0.0265  0.02675 0.027   0.02725 0.0275  0.02775
+ 0.028   0.02825 0.0285  0.02875 0.029   0.02925 0.0295  0.02975 0.03
+ 0.03025 0.0305  0.03075 0.031   0.03125 0.0315  0.03175 0.032   0.03225
+ 0.0325  0.03275 0.033   0.03325 0.0335  0.03375 0.034   0.03425 0.0345
+ 0.03475 0.035  ]
+ 
+ 
+-------------------------------
+Running fitconfig.FitModel1 fit
+-------------------------------
+ 
+This shows partly how the func_code thing works:
+Namespace(co_argcount=3, co_varnames=('a0', 'a1', 'a2'))
+I MnSeedGenerator Initial state: FCN =       622.9136715 Edm =       363.3843038 NCalls =      5
+I VariableMetricBuilder Start iterating until Edm is < 0.0002 with call limit = 100000
+I VariableMetricBuilder    0 - FCN =       622.9136715 Edm =       363.3843038 NCalls =      5
+I VariableMetricBuilder    1 - FCN =       259.5293708 Edm =   2.751157217e-14 NCalls =      8
+I VariableMetricBuilder After Hessian
+I VariableMetricBuilder    2 - FCN =       259.5293708 Edm =   2.751217009e-14 NCalls =     13
+Parameter  a0  is fitted 
+Parameter  a1  is fixed 
+Parameter  a2  is fixed 
+ 
+A) Hypothesis test: IS THIS A REASONABLE FIT? 
+chi-squared                          :  259.5293708306389
+number of data points                :  101
+total number of fit parameters       :  3  of which  1  are/is fitted and  2 are/is fixed
+number of ACTUAL fitted parameters   :  1
+number of degrees of freedom (d.o.f.):  100
+chi-squared ratio is  2.5952937083063894
+ 
+Observed chi-squared p-value of 4.440892098500626e-14 %
+ 
+B) Parameter Estimation: Given a reasonable fit, what are the model parameters and uncertainties?
+Is the covariance matrix accurate?  True
+Fitted parameters:
+a0 = 0.964672338706609 +- 0.001853240603219245 
+a1 = 0.0  (Fixed = True)
+a2 = 0.0  (Fixed = True)
+ 
+Correlation Coefficient Matrix
+┌────┬──────────┐
+│    │ a0 a1 a2 │
+├────┼──────────┤
+│ a0 │  1  0  0 │
+│ a1 │  0  0  0 │
+│ a2 │  0  0  0 │
+└────┴──────────┘
+ 
+Number of parameters 3
+['a0', 'a1', 'a2']
+Parameter 0 : name = a0 , value = 0.964672338706609
+Parameter 1 : name = a1 , value = 0.0
+Parameter 2 : name = a2 , value = 0.0
+ 
+Normalized Residuals :     -3.83    0.49   -1.39   -0.88   -1.16   -0.82   -1.41   -1.88   -1.44    0.41   -1.02   -1.75   -1.04   -1.72   -1.14   -0.89    0.27   -0.83   -0.58   -0.08   -2.33   -2.42   -0.70   -0.07   -1.77    0.49    0.57   -0.45   -1.45   -0.41   -0.62    0.59    1.52   -0.91   -2.30    0.17    1.06    0.89   -1.20   -1.76   -1.10   -0.76   -0.85    0.18   -1.23   -1.01    0.05    1.74    1.52    2.61   -0.64   -1.02    0.90    0.97    2.24   -0.69    1.02    1.13    0.75    2.12   -0.19   -1.68    0.68    1.11    1.44   -0.43    1.96    1.40    0.24    1.67    2.40    1.49    1.58    1.50    0.95    0.34    0.00    2.37    1.80    2.26    0.78    1.52    2.21    0.78    1.79    1.95    3.94    2.60    3.62    0.65    2.01    1.25    2.75    2.95    1.77    3.15    2.14    2.30    2.31    2.38    1.92
+ 
+                                   RUN TEST STATISTICS 
+ 
+Residual signs :  01000000010000001000000001100001100111000001001111001110111100111011111111111111111111111111111111111
+Nbins                     :  101
+npos                      :  60
+number of runs, r         :  24
+E(r)                      :  49.71287128712871
+V(r)                      :  23.242309577492403
+z (sigma)                 :  -5.333483244889672
+p-value (%) normal approx :  4.817322853074947e-06
+Run test p-value for robs <=  24  is  5.373800999367701e-06 (%)
+ 
+Observed run test p-value (%) =  5.373800999367701e-06
+ 
+ 
+-------------------------------
+Running fitconfig.FitModel2 fit
+-------------------------------
+ 
+This shows partly how the func_code thing works:
+Namespace(co_argcount=3, co_varnames=('a0', 'a1', 'a2'))
+I MnSeedGenerator Initial state: FCN =       322.2102528 Edm =       189.3249432 NCalls =      5
+I VariableMetricBuilder Start iterating until Edm is < 0.0002 with call limit = 100000
+I VariableMetricBuilder    0 - FCN =       322.2102528 Edm =       189.3249432 NCalls =      5
+I VariableMetricBuilder    1 - FCN =       132.8853096 Edm =   1.073894975e-18 NCalls =      8
+I VariableMetricBuilder After Hessian
+I VariableMetricBuilder    2 - FCN =       132.8853096 Edm =   1.050564216e-18 NCalls =     13
+Parameter  a0  is fixed 
+Parameter  a1  is fitted 
+Parameter  a2  is fixed 
+ 
+A) Hypothesis test: IS THIS A REASONABLE FIT? 
+chi-squared                          :  132.88530956687634
+number of data points                :  101
+total number of fit parameters       :  3  of which  1  are/is fitted and  2 are/is fixed
+number of ACTUAL fitted parameters   :  1
+number of degrees of freedom (d.o.f.):  100
+chi-squared ratio is  1.3288530956687634
+ 
+Observed chi-squared p-value of 1.5527606049665188 %
+ 
+B) Parameter Estimation: Given a reasonable fit, what are the model parameters and uncertainties?
+Is the covariance matrix accurate?  True
+Fitted parameters:
+a0 = 0.95  (Fixed = True)
+a1 = 0.06431575385455987 +- 0.004674266304687252 
+a2 = 0.0  (Fixed = True)
+ 
+Correlation Coefficient Matrix
+┌────┬──────────┐
+│    │ a0 a1 a2 │
+├────┼──────────┤
+│ a0 │  0  0  0 │
+│ a1 │  0  1  0 │
+│ a2 │  0  0  0 │
+└────┴──────────┘
+ 
+Number of parameters 3
+['a0', 'a1', 'a2']
+Parameter 0 : name = a0 , value = 0.95
+Parameter 1 : name = a1 , value = 0.06431575385455987
+Parameter 2 : name = a2 , value = 0.0
+ 
+Normalized Residuals :     -2.37    1.86   -0.11    0.30   -0.06    0.20   -0.47   -1.02   -0.65    1.13   -0.36   -1.15   -0.50   -1.25   -0.72   -0.52    0.58   -0.57   -0.37    0.08   -2.21   -2.34   -0.67   -0.08   -1.82    0.41    0.45   -0.61   -1.64   -0.64   -0.88    0.29    1.19   -1.26   -2.69   -0.25    0.61    0.42   -1.70   -2.28   -1.66   -1.34   -1.45   -0.44   -1.88   -1.68   -0.64    1.03    0.78    1.85   -1.42   -1.81    0.09    0.13    1.39   -1.56    0.13    0.22   -0.18    1.18   -1.14   -2.65   -0.31    0.11    0.43   -1.47    0.91    0.34   -0.84    0.58    1.30    0.38    0.45    0.36   -0.20   -0.82   -1.18    1.18    0.59    1.05   -0.45    0.29    0.96   -0.48    0.52    0.67    2.65    1.30    2.31   -0.67    0.68   -0.09    1.41    1.60    0.40    1.77    0.75    0.91    0.91    0.97    0.50
+ 
+                                   RUN TEST STATISTICS 
+ 
+Residual signs :  01010100010000001001000001100001100011000000000111001110110100011011011111000111011011111010111111111
+Nbins                     :  101
+npos                      :  50
+number of runs, r         :  42
+E(r)                      :  51.495049504950494
+V(r)                      :  24.99254975002451
+z (sigma)                 :  -1.8992929262192975
+p-value (%) normal approx :  2.8762986212922144
+Run test p-value for robs <=  42  is  3.5801986259700715 (%)
+ 
+Observed run test p-value (%) =  3.5801986259700715
+ 
+ 
+-------------------------------
+Running fitconfig.FitModel3 fit
+-------------------------------
+ 
+This shows partly how the func_code thing works:
+Namespace(co_argcount=3, co_varnames=('a0', 'a1', 'a2'))
+I MnSeedGenerator Initial state: FCN =       322.2102528 Edm =       222.3478971 NCalls =      5
+I VariableMetricBuilder Start iterating until Edm is < 0.0002 with call limit = 100000
+I VariableMetricBuilder    0 - FCN =       322.2102528 Edm =       222.3478971 NCalls =      5
+I VariableMetricBuilder    1 - FCN =       99.86235562 Edm =   1.371080577e-17 NCalls =      8
+I VariableMetricBuilder After Hessian
+I VariableMetricBuilder    2 - FCN =       99.86235562 Edm =   1.378602163e-17 NCalls =     13
+Parameter  a0  is fixed 
+Parameter  a1  is fixed 
+Parameter  a2  is fitted 
+ 
+A) Hypothesis test: IS THIS A REASONABLE FIT? 
+chi-squared                          :  99.86235561913088
+number of data points                :  101
+total number of fit parameters       :  3  of which  1  are/is fitted and  2 are/is fixed
+number of ACTUAL fitted parameters   :  1
+number of degrees of freedom (d.o.f.):  100
+chi-squared ratio is  0.9986235561913088
+ 
+Observed chi-squared p-value of 48.5070703814033 %
+ 
+B) Parameter Estimation: Given a reasonable fit, what are the model parameters and uncertainties?
+Is the covariance matrix accurate?  True
+Fitted parameters:
+a0 = 0.95  (Fixed = True)
+a1 = 0.0  (Fixed = True)
+a2 = 0.09931104548627755 +- 0.006660104391467851 
+ 
+Correlation Coefficient Matrix
+┌────┬──────────┐
+│    │ a0 a1 a2 │
+├────┼──────────┤
+│ a0 │  0  0  0 │
+│ a1 │  0  0  0 │
+│ a2 │  0  0  1 │
+└────┴──────────┘
+ 
+Number of parameters 3
+['a0', 'a1', 'a2']
+Parameter 0 : name = a0 , value = 0.95
+Parameter 1 : name = a1 , value = 0.0
+Parameter 2 : name = a2 , value = 0.09931104548627755
+ 
+Normalized Residuals :     -2.37    1.92    0.00    0.48    0.16    0.47   -0.17   -0.67   -0.27    1.54    0.08   -0.69   -0.02   -0.74   -0.20    0.02    1.14   -0.00    0.21    0.67   -1.61   -1.74   -0.06    0.53   -1.21    1.01    1.06   -0.01   -1.04   -0.04   -0.29    0.88    1.77   -0.69   -2.13    0.31    1.15    0.95   -1.18   -1.78   -1.16   -0.86   -0.98    0.00   -1.45   -1.27   -0.24    1.41    1.15    2.20   -1.10   -1.51    0.37    0.40    1.64   -1.33    0.34    0.40   -0.02    1.32   -1.03   -2.56   -0.24    0.15    0.44   -1.47    0.88    0.28   -0.92    0.47    1.17    0.22    0.27    0.14   -0.44   -1.09   -1.47    0.86    0.25    0.67   -0.85   -0.14    0.50   -0.97   -0.00    0.12    2.07    0.70    1.67   -1.34   -0.02   -0.81    0.65    0.81   -0.41    0.93   -0.12   -0.00   -0.03    0.00   -0.50
+ 
+                                   RUN TEST STATISTICS 
+ 
+Residual signs :  01111100011000011011000101100001100111000001000111001110110100011011011111000111001001111000110100010
+Nbins                     :  101
+npos                      :  50
+number of runs, r         :  45
+E(r)                      :  51.495049504950494
+V(r)                      :  24.99254975002451
+z (sigma)                 :  -1.2992035032323868
+p-value (%) normal approx :  9.693704979154377
+Run test p-value for robs <=  45  is  11.495112512650389 (%)
+ 
+Observed run test p-value (%) =  11.495112512650389
+ 
+ 
+-------------------------------
+Running fitconfig.FitModel4 fit
+-------------------------------
+ 
+This shows partly how the func_code thing works:
+Namespace(co_argcount=3, co_varnames=('a0', 'a1', 'a2'))
+I MnSeedGenerator Initial state: FCN =       322.2102528 Edm =       252.0058251 NCalls =      9
+I VariableMetricBuilder Start iterating until Edm is < 0.0002 with call limit = 100000
+I VariableMetricBuilder    0 - FCN =       322.2102528 Edm =       252.0058251 NCalls =      9
+I VariableMetricBuilder    1 - FCN =       169.3159457 Edm =       13.17056512 NCalls =     15
+I VariableMetricBuilder    2 - FCN =       119.7322432 Edm =   7.917687258e-21 NCalls =     21
+I VariableMetricBuilder After Hessian
+I VariableMetricBuilder    3 - FCN =       119.7322432 Edm =   3.001793214e-20 NCalls =     31
+Parameter  a0  is fitted 
+Parameter  a1  is fitted 
+Parameter  a2  is fixed 
+ 
+A) Hypothesis test: IS THIS A REASONABLE FIT? 
+chi-squared                          :  119.73224315739446
+number of data points                :  101
+total number of fit parameters       :  3  of which  2  are/is fitted and  1 are/is fixed
+number of ACTUAL fitted parameters   :  2
+number of degrees of freedom (d.o.f.):  99
+chi-squared ratio is  1.209416597549439
+ 
+Observed chi-squared p-value of 7.6626420317298045 %
+ 
+B) Parameter Estimation: Given a reasonable fit, what are the model parameters and uncertainties?
+Is the covariance matrix accurate?  True
+Fitted parameters:
+a0 = 0.939842123000097 +- 0.0028008473504813154 
+a1 = 0.08352571662460023 +- 0.007064331651106107 
+a2 = 0.0  (Fixed = True)
+ 
+Correlation Coefficient Matrix
+┌────┬───────────────────┐
+│    │    a0    a1    a2 │
+├────┼───────────────────┤
+│ a0 │     1 -0.75     0 │
+│ a1 │ -0.75     1     0 │
+│ a2 │     0     0     0 │
+└────┴───────────────────┘
+ 
+Number of parameters 3
+['a0', 'a1', 'a2']
+Parameter 0 : name = a0 , value = 0.939842123000097
+Parameter 1 : name = a1 , value = 0.08352571662460023
+Parameter 2 : name = a2 , value = 0.0
+ 
+Normalized Residuals :     -1.35    2.83    0.82    1.20    0.79    1.02    0.31   -0.27    0.07    1.82    0.30   -0.52    0.10   -0.67   -0.17    0.01    1.09   -0.08    0.10    0.52   -1.79   -1.94   -0.28    0.29   -1.47    0.73    0.76   -0.32   -1.36   -0.37   -0.63    0.53    1.41   -1.06   -2.49   -0.06    0.78    0.57   -1.55   -2.15   -1.53   -1.22   -1.35   -0.35   -1.80   -1.61   -0.58    1.08    0.83    1.89   -1.40   -1.80    0.10    0.13    1.38   -1.57    0.11    0.19   -0.22    1.14   -1.20   -2.71   -0.38    0.03    0.34   -1.56    0.82    0.24   -0.94    0.47    1.18    0.25    0.32    0.22   -0.34   -0.97   -1.33    1.02    0.43    0.88   -0.62    0.11    0.78   -0.67    0.32    0.47    2.45    1.09    2.10   -0.89    0.46   -0.31    1.18    1.36    0.17    1.53    0.51    0.66    0.66    0.71    0.24
+ 
+                                   RUN TEST STATISTICS 
+ 
+Residual signs :  01111110111010011011000101100001100011000000000111001110110100011011011111000111011011111010111111111
+Nbins                     :  101
+npos                      :  59
+number of runs, r         :  42
+E(r)                      :  50.06930693069307
+V(r)                      :  23.587275757278697
+z (sigma)                 :  -1.6614885119056213
+p-value (%) normal approx :  4.830768714145244
+Run test p-value for robs <=  42  is  5.953385745136537 (%)
+ 
+Observed run test p-value (%) =  5.953385745136537
+ 
+ 
+-------------------------------
+Running fitconfig.FitModel5 fit
+-------------------------------
+ 
+This shows partly how the func_code thing works:
+Namespace(co_argcount=3, co_varnames=('a0', 'a1', 'a2'))
+I MnSeedGenerator Initial state: FCN =       622.9136715 Edm =       405.3505876 NCalls =     13
+I VariableMetricBuilder Start iterating until Edm is < 0.0002 with call limit = 100000
+I VariableMetricBuilder    0 - FCN =       622.9136715 Edm =       405.3505876 NCalls =     13
+I VariableMetricBuilder    1 - FCN =       349.7191185 Edm =       194.7363541 NCalls =     21
+I VariableMetricBuilder    2 - FCN =       100.1000987 Edm =     0.02960875727 NCalls =     29
+I VariableMetricBuilder    3 - FCN =       98.82340899 Edm =   1.524024871e-18 NCalls =     39
+I VariableMetricBuilder After Hessian
+I VariableMetricBuilder    4 - FCN =       98.82340899 Edm =   1.568187237e-18 NCalls =     55
+Parameter  a0  is fitted 
+Parameter  a1  is fitted 
+Parameter  a2  is fitted 
+ 
+A) Hypothesis test: IS THIS A REASONABLE FIT? 
+chi-squared                          :  98.82340898746884
+number of data points                :  101
+total number of fit parameters       :  3  of which  3  are/is fitted and  0 are/is fixed
+number of ACTUAL fitted parameters   :  3
+number of degrees of freedom (d.o.f.):  98
+chi-squared ratio is  1.0084021325251922
+ 
+Observed chi-squared p-value of 45.76880163155591 %
+ 
+B) Parameter Estimation: Given a reasonable fit, what are the model parameters and uncertainties?
+Is the covariance matrix accurate?  True
+Fitted parameters:
+a0 = 0.9510336570105874 +- 0.0037195493515704984 
+a1 = -0.01915411372652115 +- 0.02354034699519829 
+a2 = 0.12298632733066504 +- 0.026896251139028545 
+ 
+Correlation Coefficient Matrix
+┌────┬──────────────────────┐
+│    │     a0     a1     a2 │
+├────┼──────────────────────┤
+│ a0 │      1 -0.797  0.658 │
+│ a1 │ -0.797      1 -0.954 │
+│ a2 │  0.658 -0.954      1 │
+└────┴──────────────────────┘
+ 
+Number of parameters 3
+['a0', 'a1', 'a2']
+Parameter 0 : name = a0 , value = 0.9510336570105874
+Parameter 1 : name = a1 , value = -0.01915411372652115
+Parameter 2 : name = a2 , value = 0.12298632733066504
+ 
+Normalized Residuals :     -2.47    1.84   -0.06    0.43    0.13    0.45   -0.16   -0.66   -0.25    1.58    0.13   -0.63    0.05   -0.66   -0.11    0.11    1.24    0.11    0.32    0.79   -1.49   -1.62    0.07    0.66   -1.07    1.15    1.20    0.14   -0.89    0.11   -0.15    1.02    1.92   -0.55   -1.98    0.45    1.30    1.09   -1.04   -1.64   -1.02   -0.72   -0.85    0.14   -1.31   -1.14   -0.11    1.54    1.27    2.32   -0.98   -1.39    0.48    0.51    1.74   -1.23    0.43    0.49    0.07    1.40   -0.95   -2.49   -0.17    0.21    0.50   -1.42    0.93    0.33   -0.88    0.51    1.20    0.24    0.29    0.16   -0.43   -1.09   -1.48    0.85    0.23    0.65   -0.88   -0.18    0.46   -1.02   -0.06    0.06    2.01    0.62    1.60   -1.42   -0.11   -0.91    0.55    0.70   -0.53    0.80   -0.25   -0.14   -0.18   -0.15   -0.66
+ 
+                                   RUN TEST STATISTICS 
+ 
+Residual signs :  01011100011010011111001101110101100111000001000111001110111100011011011111000111001001111000110100000
+Nbins                     :  101
+npos                      :  54
+number of runs, r         :  45
+E(r)                      :  51.257425742574256
+V(r)                      :  24.755514165277916
+z (sigma)                 :  -1.2576498085293808
+p-value (%) normal approx :  10.425921576466202
+Run test p-value for robs <=  45  is  12.34414031870054 (%)
+ 
+Observed run test p-value (%) =  12.34414031870054
