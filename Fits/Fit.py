@@ -23,6 +23,7 @@ plotfn.PlotDataWithGrid(1, x, y, dy, 'Measurements.dat', 'x', 'y')
 model   = fitconfig.FitModel5(x, y, dy)
 
 # Show the fitted model superimposed on the plot
-plotfn.PlotModel2(1, x, model, 'Measurements.dat', 'x', 'y', 'lime')
+plotfn.PlotModel3(1, x, model, 'Measurements.dat', 'x', 'y', 'Model 5', 'lime')
+plt.legend(loc='upper left')
 
 plt.show()

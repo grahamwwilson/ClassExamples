@@ -49,3 +49,10 @@ def PlotModel2(ifigure, x, ymodel, title, xlabel, ylabel, mycolor='blue'):
     plt.title(title)
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
+    
+def PlotModel3(ifigure, x, ymodel, title, xlabel, ylabel, mylabel, mycolor='blue'):
+    plt.figure(ifigure)
+    plt.plot(x, ymodel, label = mylabel, color=mycolor)    
+    plt.title(title)
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)    
