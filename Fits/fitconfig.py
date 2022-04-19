@@ -97,3 +97,21 @@ def FitModel5(x, y, dy):
     y_model = mymodels.quadmodel(x, *m.values)
     
     return y_model
+    
+def FitModel6(x, y, dy):
+
+    print(" ")
+    print(" ")
+    print("-------------------------------")
+    print("Running fitconfig.FitModel6 fit")
+    print("-------------------------------")
+    print(" ")
+# Model is y(x) = a0 + a2*x**2 (2 parameters)   
+    lsq = MyLeastSquares.LsqDriver(mymodels.quadmodel, x, y, dy)
+    m = Minuit(lsq, a0 = 1.0, a1 = 0.0, a2 = 0.0)
+    FixParameters(m, ["a1"]) 
+    GenericFit(m, lsq, len(x))
+    
+    y_model = mymodels.quadmodel(x, *m.values)
+    
+    return y_model    
