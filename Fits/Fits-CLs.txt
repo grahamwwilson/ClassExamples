@@ -1,6 +1,7 @@
 This output was obtained by doing:
 grep -B4 -A8 "REASONABLE" Fits.log >Fits-CLs.txt
 
+
 Parameter  a0  is fitted 
 Parameter  a1  is fixed 
 Parameter  a2  is fixed 
@@ -70,3 +71,17 @@ number of degrees of freedom (d.o.f.):  98
 chi-squared ratio is  1.0084021325251922
  
 Observed chi-squared p-value of 45.76880163155591 %
+--
+Parameter  a0  is fitted 
+Parameter  a1  is fixed 
+Parameter  a2  is fitted 
+ 
+A) Hypothesis test: IS THIS A REASONABLE FIT? 
+chi-squared                          :  99.48547024870324
+number of data points                :  101
+total number of fit parameters       :  3  of which  2  are/is fitted and  1 are/is fixed
+number of ACTUAL fitted parameters   :  2
+number of degrees of freedom (d.o.f.):  99
+chi-squared ratio is  1.0049037398858913
+ 
+Observed chi-squared p-value of 46.73924985365285 %
