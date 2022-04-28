@@ -6,24 +6,28 @@
 #
 # Graham W. Wilson, 28-APR-2022
 
-import math
+from math import sqrt
 
 def Discriminant(a,b,c):
     d = b**2 - 4*a*c
     return d
+        
+def Sqrt(x):
+    assert x >=0, 'Only non-negative discriminants are allowed by math.sqrt'
+    return sqrt(x)
 
 def HighSchool(a,b,c):
 # High School version          NR eqn 5.6.2
     d = Discriminant(a,b,c)
-    x1 = (-b + math.sqrt(d))/(2*a)
-    x2 = (-b - math.sqrt(d))/(2*a)    
+    x1 = (-b + Sqrt(d))/(2*a)
+    x2 = (-b - Sqrt(d))/(2*a)    
     return x1, x2
     
 def Fagnano(a,b,c):
 # Conte di Fagnano version     NR eqn 5.6.3
-    d = Discriminant(a,b,c)    
-    x1 = 2*c/(-b - math.sqrt(d))
-    x2 = 2*c/(-b + math.sqrt(d))
+    d = Discriminant(a,b,c)
+    x1 = 2*c/(-b - Sqrt(d))
+    x2 = 2*c/(-b + Sqrt(d))
     return x1, x2
     
 def Numerical(a,b,c):
@@ -32,16 +36,15 @@ def Numerical(a,b,c):
 # Note that the x1 and x2 definitions are swapped with respect to NR 
 # so as to correspond to the other methods.
     d = Discriminant(a,b,c)    
-    q = -(b + Sign(b)*math.sqrt(d))/2       
+    q = -(b + Sign(b)*Sqrt(d))/2       
     x1 = c/q
     x2 = q/a
     return x1, x2
     
 def Sign(x):
-# Seems like python doesn't have an intrinsic sign function. Write our own.
+# Seems like python doesn't have an intrinsic sign function. 
+# Write our own with default value of 1 (also if x is zero).
     sign = 1
     if x<0:
         sign = -1
-    elif x==0:
-        sign = 0
     return sign
