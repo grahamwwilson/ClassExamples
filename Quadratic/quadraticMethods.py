@@ -27,17 +27,17 @@ def Fagnano(a,b,c):
     return x1, x2
     
 def Numerical(a,b,c):
-# Numerically robust version   NR eqn 5.6.4. 
+# Numerically robust version   NR eqn 5.6.4 
 # This is essentially the modified Fagnano formulae (4,5) described in Nievergelt. 
 # Note that the x1 and x2 definitions are swapped with respect to NR 
 # so as to correspond to the other methods.
     d = Discriminant(a,b,c)    
-    q = -(b + sign(b)*math.sqrt(d))/2       
+    q = -(b + Sign(b)*math.sqrt(d))/2       
     x1 = c/q
     x2 = q/a
     return x1, x2
     
-def sign(x):
+def Sign(x):
 # Seems like python doesn't have an intrinsic sign function. Write our own.
     sign = 1
     if x<0:
