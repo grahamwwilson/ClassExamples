@@ -6,15 +6,27 @@
 #
 # Graham W. Wilson, 28-APR-2022
 
-from math import sqrt
+import cmath              # Allows for complex numbers
+import math
 
 def Discriminant(a,b,c):
     d = b**2 - 4*a*c
     return d
-        
-def Sqrt(x):
+
+def RealSqrt(x):
     assert x >=0, 'Only non-negative discriminants are allowed by math.sqrt'
-    return sqrt(x)
+    return math.sqrt(x)
+    
+def ComplexSqrt(x):
+    return cmath.sqrt(x)    
+    
+def Sqrt(x):
+# Use our own version of the square root function 
+# Negative arguments give complex values
+    if x<0:
+        return ComplexSqrt(x)
+    else:
+        return RealSqrt(x)
 
 def HighSchool(a,b,c):
 # High School version          NR eqn 5.6.2
@@ -40,6 +52,16 @@ def Numerical(a,b,c):
     x1 = c/q
     x2 = q/a
     return x1, x2
+    
+def NumericalAnalyst(a,b,c):
+# Described as the numerical analysts' quadratic formulae (11, 12) in Nievergelt
+# should be basically the same as the above.
+    h = b/2
+    d = h**2 - a*c
+    v = h + Sign(b)*Sqrt(d)       
+    x1 = -c/v
+    x2 = -v/a
+    return x1, x2    
     
 def Sign(x):
 # Seems like python doesn't have an intrinsic sign function. 
