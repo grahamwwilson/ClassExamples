@@ -1,0 +1,4 @@
+test.py   # Check CPU count
+test2.py  # Launch 6 parallel processes
+test3.py  # Pool approach   See https://pythonspeed.com/articles/python-multiprocessing/
+test4.py  # Process id info 
