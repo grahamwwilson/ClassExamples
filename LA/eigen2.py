@@ -44,7 +44,7 @@ print("vr1",vr1.shape)
 print(vr1)
 print()
 
-# Test A vri  = lambdai v for i=0,1
+# Test A vri  = lambdai vri for i=0,1    (Is A x = lamba x for each solution (lambda_i and x_i))
 #
 #
 lhs0 = np.dot(A,vr0)
