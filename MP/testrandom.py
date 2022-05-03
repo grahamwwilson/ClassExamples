@@ -2,6 +2,7 @@ import multiprocessing as mp
 import random
 import os
 from timeit import default_timer as timer
+# See https://docs.python.org/3/library/multiprocessing.html for more details of multiprocessing
 
 def rndmfunc(iseed):
     print('Initializing random number seed ',iseed,' with pid ',os.getpid())
@@ -13,10 +14,15 @@ def rndmfunc(iseed):
         x = x + random.uniform(-0.5,0.5)
     return x
 
-start_time = timer()
-pool = mp.Pool(processes=8)
-results = pool.map(rndmfunc, range(1,9))
-print(type(results))
-print(results)
-end_time = timer()
-print('Execution time ',end_time-start_time)
+if __name__ == '__main__':   # for safe importing of main module
+
+    start_time = timer()
+
+    print("Number of cpus : ", mp.cpu_count())
+    pool = mp.Pool(processes=12)
+    results = pool.map(rndmfunc, range(1,13))
+
+    print(results)
+    
+    end_time = timer()
+    print('Execution time ',end_time-start_time)

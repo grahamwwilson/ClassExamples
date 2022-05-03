@@ -1,19 +1,16 @@
 from multiprocessing import Process
 import os
 
-def print_func(continent='1: Asia'):
+def print_func(continent):
 # dummy loop so that this takes a finite amount of time
     N = 500000000
     for i in range(N):
         j = i
     print('The continent name is : ', continent,' (based on pid ',os.getpid(),')')
 
-def main():
-    names = ['2: North America', '3: South America', '4: Europe', '5: Africa', '6: Oceania']
+def myprogram():
+    names = ['1: Asia ', '2: North America', '3: South America', '4: Europe', '5: Africa', '6: Oceania']
     procs = []
-    proc = Process(target=print_func)  # instantiating without any argument
-    procs.append(proc)
-    proc.start()
 
     # instantiating process with arguments
     for name in names:
@@ -32,4 +29,4 @@ def main():
     print('All processes completed')  
 
 if __name__ == "__main__":  # confirms that the code is under main function
-    main()
+    myprogram()
