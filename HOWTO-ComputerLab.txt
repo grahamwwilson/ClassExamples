@@ -49,4 +49,3 @@
    examples in the ClassExamples git repository. If not let me know. With these changes you 
    should always be in the same configuration, and will not need to do these 
    steps again, on subsequent logins. 
-
