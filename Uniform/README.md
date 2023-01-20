@@ -14,3 +14,13 @@ Add argument parsing to control number of random numbers generated
 and the random number seed used to initialize the random number sequence.
 
 python3 UniformArgParse.py --help shows the options
+
+## UniformPlotAP.py
+Add argument parsing to UniformPlot.py example
+
+## UniformPlotWithFunctions.py
+Code developed in class on 20-JAN-2023 partially rewriting UniformPlot to use functions
+
+## UniformPlotter.py
+Build on UniformPlotWithFunctions, including calculateStatistics implementation and 
+use of argument parsing
