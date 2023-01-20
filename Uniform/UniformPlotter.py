@@ -32,7 +32,6 @@ def calculateStatistics(xlist):
     print('Observed mean ',xbar)
     print('Observed rms ',sampleStandardDeviation)
     print('RESULT <u> = ',xbar,' +- ',sampleStandardDeviation/math.sqrt(N))
-
      
 def makePlot(mylist, nbins):
     """ Make plot with uniform distribution histogram with specified number of bins, nbins """
