@@ -42,7 +42,10 @@ def makePlot(mylist, nbins):
     plot.title('Uniform Distribution Histogram')
     plot.xlabel('u')
     plot.ylabel('Instances per bin')
-    plot.show()
+    
+    plot.show(block=False)
+    plot.pause(3)
+    plot.close()
 
 def main(ngen, seed, nbins):
     " python main function to generate random numbers, make statistics, and make plot "
