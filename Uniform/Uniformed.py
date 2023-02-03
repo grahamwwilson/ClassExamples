@@ -62,7 +62,9 @@ def main(ngen, seed, nbins):
     makePlot(ulist,nbins)
 
 if __name__ == '__main__':
-    # execute only if run as a script / from the command line
+    # This executes only if run as a script / from the command line
+    print('Executing the Uniformed.py main conditional statements')  # Add print for clarity on execution mode
+    
     parser = argparse.ArgumentParser(description='Uniform random number generation')
     parser.add_argument("-n", "--ngen", type=int, default=10000, help="Number of random numbers to generate")
     parser.add_argument("-s", "--seed", type=int, default=203,   help="Random number seed")
