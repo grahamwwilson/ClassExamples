@@ -4,11 +4,13 @@
 #
 import random
 import math
+import numpy as np
 import matplotlib.pyplot as plot
 import argparse
 
-# Global variable: number of degrees of freedom
-ndof = 1
+# Global variables
+ndof = 1            # number of degrees of freedom for chi-squared distributions
+meanPoisson = 2.5   # mean of the Poisson distribution
     
 def generateRandomNumbers(N, which):
     """ generate one experiment with N random numbers and return a list with the random numbers 
@@ -27,6 +29,8 @@ def generateRandomNumbers(N, which):
         chisq: Chi-squared distribution with ndof degrees of freedom      
               
         expo: Exponential distribution with rate parameter, lambda=1.0 
+        
+        poisson: Poisson distribution with mean, meanPoisson
 
     """
     rlist=[]
@@ -56,7 +60,9 @@ def generateRandomNumbers(N, which):
             r = 0.0
             for j in range(ndof):
                 z = random.gauss(0.0, 1.0)
-                r = r + z**2                                
+                r = r + z**2
+        elif which == 'poisson':
+             r = np.random.poisson(meanPoisson)                              
         else:
             r = random.expovariate(1.0) # exponential distribution with rate parameter, lambda=1.0, p(x) = exp(-x).
         rlist.append(r)
@@ -121,10 +127,10 @@ def makePlot(mylist, plotfile, bins=[-0.25, 0.25, 0.75, 1.25]):
     plot.savefig(plotfile)              # Save plot to file
     plot.close()
     
-def makePlot2(mylist, plotfile):
+def makePlot2(mylist, plotfile, title):
     " make plot with histogram"
     plot.hist(mylist, 50) 
-    plot.title('Chi-squared distributions')
+    plot.title(title)
     plot.xlabel('r')
     plot.ylabel('Instances per bin')
     
@@ -159,10 +165,11 @@ def piEstimates(which, mean, meanUncertainty):
     print("% deviation            ",percentDeviation)
     print("Standardized Deviation ",standardizedDeviation)
 
-def main(ngen, seed, which, plotfile, criticalValue):
+def main(ngen, seed, which, plotfile, criticalValue, title):
     " python main function to generate random numbers, make statistics, and make plot "
 # Initialize the random number generator using specified seed
     random.seed(seed)
+    np.random.seed(seed)   # Also reset the numpy based random numbers 
 
 # Generate random numbers returning the list of observed random variates
     rList = generateRandomNumbers(ngen, which)
@@ -177,7 +184,7 @@ def main(ngen, seed, which, plotfile, criticalValue):
     tailProbability(rList, criticalValue)
         
 # Plot the distribution of the random variates saving the plot to a file
-    makePlot2(rList,plotfile)
+    makePlot2(rList,plotfile,title)
 
 if __name__ == '__main__':
     # execute only if run as a script / from the command line
@@ -186,9 +193,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Random number generation')
     parser.add_argument("-n", "--ngen", type=int, default=100000, help="Number of random numbers to generate")
     parser.add_argument("-d", "--ndof", type=int, default=5, help="Number of degrees of freedom for chi-squared distribution") 
-    parser.add_argument("-c", "--crit", type=float, default=1.0, help="Critical value")        
+    parser.add_argument("-c", "--crit", type=float, default=1.0, help="Critical value") 
+    parser.add_argument("-m", "--pmu", type=float, default=2.5, help="Poisson mean")
+    parser.add_argument("-t", "--tit", type=str, default="Chi-squared distributions", help="Plot title string")                
     parser.add_argument("-s", "--seed", type=int, default=208,   help="Random number seed")
-    parser.add_argument("-w", "--which", type=str, default="chisq", help="Random number distribution (uniform/gauss/expo/pie2/pie3/chisq)")
+    parser.add_argument("-w", "--which", type=str, default="chisq", help="Random number distribution (uniform/gauss/expo/pie2/pie3/chisq/poisson)")
     parser.add_argument("-p", "--plotfile", type=str, default="chisq.png", help="Graphics file")    
 
     args=parser.parse_args()
@@ -196,5 +205,6 @@ if __name__ == '__main__':
     
 # Set global variable
     ndof = args.ndof
+    meanPoisson = args.pmu
     
-    main(args.ngen, args.seed, args.which, args.plotfile, args.crit)
+    main(args.ngen, args.seed, args.which, args.plotfile, args.crit, args.tit)
