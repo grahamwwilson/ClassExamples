@@ -70,23 +70,27 @@ def calculateStatistics(xlist, verbose=False):
     sampleVariance = besselCorrection*(xxbar - xbar**2)
     sampleStandardDeviation = math.sqrt(sampleVariance)
     sampleMean = xbar
-    sampleUncertaintyOnMean = sampleStandardDeviation/math.sqrt(N)  # NB the 1/sqrt(N) !
-    
+    sampleUncertaintyOnMean = sampleStandardDeviation/math.sqrt(N)     # NB the 1/sqrt(N) !
+    sampleUncertaintySD = sampleStandardDeviation/math.sqrt(N-1.0)     # Barlow 5.24    
+    sampleUncertaintyVariance = sampleVariance*math.sqrt(2.0/(N-1.0))  # Barlow 5.18    
+      
     if verbose:
         print(' ')
         print('Summary based on',int(N),'instances')
         print('Observed mean ',sampleMean)
-        print('Observed s.d. ',sampleStandardDeviation,'variance: ',sampleStandardDeviation**2)
+        print('Observed s.d. ',sampleStandardDeviation,' +- ',sampleUncertaintySD)
+        print('Observed variance ',sampleVariance,' +- ',sampleUncertaintyVariance)
         print('RESULT <x> = ',sampleMean,' +- ',sampleUncertaintyOnMean)
     
     return sampleMean, sampleStandardDeviation, sampleUncertaintyOnMean
       
-def makePlot(mylist, plotfile, bins=[-0.25, 0.25, 0.75, 1.25]):
+def makePlot(mylist, plotfile, bins=[-0.05, 0.05, 0.15, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 0.85, 0.95, 1.05]):
     " make plot with histogram using discrete bins that emphasize the 0 (failure) or 1 (success) nature of Bernouilli trials"
     plot.hist(mylist, bins) 
     plot.title('1 million Bernouilli trials')
-    plot.xlabel('r')
+    plot.xlabel('X')
     plot.ylabel('Instances per bin')
+    plot.subplots_adjust(left=0.15)
     
     plot.show(block=False)
     plot.pause(10)
