@@ -80,13 +80,16 @@ def calculateStatistics(xlist, verbose=False):
     sampleVariance = besselCorrection*(xxbar - xbar**2)
     sampleStandardDeviation = math.sqrt(sampleVariance)
     sampleMean = xbar
-    sampleUncertaintyOnMean = sampleStandardDeviation/math.sqrt(N)  # NB the 1/sqrt(N) !
-    
+    sampleUncertaintyOnMean = sampleStandardDeviation/math.sqrt(N)     # NB the 1/sqrt(N) !
+    sampleUncertaintySD = sampleStandardDeviation/math.sqrt(N-1.0)     # Barlow 5.24    
+    sampleUncertaintyVariance = sampleVariance*math.sqrt(2.0/(N-1.0))  # Barlow 5.18    
+      
     if verbose:
         print(' ')
         print('Summary based on',int(N),'instances')
         print('Observed mean ',sampleMean)
-        print('Observed s.d. ',sampleStandardDeviation,'variance: ',sampleStandardDeviation**2)
+        print('Observed s.d. ',sampleStandardDeviation,' +- ',sampleUncertaintySD)
+        print('Observed variance ',sampleVariance,' +- ',sampleUncertaintyVariance)
         print('RESULT <x> = ',sampleMean,' +- ',sampleUncertaintyOnMean)
     
     return sampleMean, sampleStandardDeviation, sampleUncertaintyOnMean
