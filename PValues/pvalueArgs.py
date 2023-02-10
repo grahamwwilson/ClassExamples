@@ -6,8 +6,8 @@ from argparse import ArgumentParser
 def getArgs(argv=None):
 # Set command line configurable parameters. Do python3 program.py -h to see this in action.
     parser = ArgumentParser(description="Calculate p-value (upper tail probability) for Chi-Squared distribution")
-    parser.add_argument("-c", "--chsq", type=float, default=6.0, help="Chi-squared value")
-    parser.add_argument("-n", "--ndof", type=int, default=2, help="Number of degrees of freedom")   
+    parser.add_argument("-c", "--chsq", type=float, default=4.0, help="Chi-squared value")
+    parser.add_argument("-n", "--ndof", type=int, default=1, help="Number of degrees of freedom")   
          
     args=parser.parse_args(argv)
     print('(pvalueArgs.getArgs     ) Found argument list: ',args)
