@@ -23,7 +23,7 @@ def line(x, c, m):
     return m*x + c
 
 # generate random toy data with random offsets in y 
-np.random.seed(24)
+np.random.seed(105)
 x_data = np.linspace(0, 1, 11)
 yerr_data = 0.1 + 0.1*x_data    # Make assumed Gaussian uncertainties increase with increasing x.
 c_true = 1.0
