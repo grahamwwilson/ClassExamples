@@ -17,3 +17,9 @@ two parameters.
 ## basicfitparpar.py
 Chi-squared fit of data from a parabola model to a parabola model with 
 two parameters.
+
+## Chisqfit.py
+Explicit stand-alone chi-squared fit
+
+## NLLfit.py
+Explicit stand-alone negative log-likelihood fit
