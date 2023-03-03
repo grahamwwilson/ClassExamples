@@ -2,23 +2,21 @@ from matplotlib import pyplot as plt
 import numpy as np
 from iminuit import Minuit
 
-# parabola model
-def parabola(x, c, m):
-    return m*x**2 + c
-
 # line model
 def line(x, c, m):
     return m*x + c
     
 def custom_nll(c, m):
-    """ -2 negative-log-likelihood """
+    """ -2 negative-log-likelihood function to be minimized"""
     ym = line(x_data, c, m)
     z = (y_data - ym)/yerr_data
     p = (1.0/(np.sqrt(2.0*np.pi)*yerr_data))*np.exp(-0.5*z**2)
-    return -2.0*np.sum(np.log(p))
+    nll = -2.0*np.sum(np.log(p))   # Use factor of 2 so that uncertainty intervals are same as for chi-squared
+    print('-2lnL = ',nll,'for c,m = ',c,m)
+    return nll
 
 # generate random toy data with random offsets in y 
-np.random.seed(23)
+np.random.seed(25)
 x_data = np.linspace(0, 1, 11)
 yerr_data = 0.1 + 0.1*x_data    # Make assumed Gaussian uncertainties increase with increasing x.
 c_true = 1.0
@@ -47,11 +45,18 @@ plt.errorbar(x_data, y_data, yerr_data, fmt="o", label="Data")
 plt.plot(x_data, line(x_data, *m.values), label="Line fit")
 
 fit_info = [
-    f" -2 lnL = {m.fval:.1f} ",
+    f" -2 lnL = {m.fval:.2f} ",
 ]
 for p, v, e in zip(m.parameters, m.values, m.errors):
     fit_info.append(f"{p} = ${v:.3f} \\pm {e:.3f}$")
 
 plt.legend(title="\n".join(fit_info))
 
-plt.show()
+print('Best fit function value (-2lnL):',m.fval)
+print('Fitted parameter values ',m.values)
+print('Fitted parameter errors ',m.errors)
+print('Fitted parameter correlation coefficient matrix:')
+print(m.covariance.correlation())
+
+plt.show(block=False)
+plt.pause(10)   # Keep on-screen for 10s
