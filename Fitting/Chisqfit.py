@@ -18,9 +18,11 @@ def custom_chisq(c, m):
     return chisq
 
 # generate random toy data with random offsets in y 
-np.random.seed(25)
-x_data = np.linspace(0, 1, 11)
-yerr_data = 0.1 + 0.1*x_data    # Make assumed Gaussian uncertainties increase with increasing x.
+seed = 26
+np.random.seed(seed)
+print('seed',seed)
+x_data = np.linspace(-1.0, 1.0, 21)
+yerr_data = 0.1 + 0.05*x_data    # Make assumed Gaussian uncertainties increase with increasing x.
 c_true = 1.0
 m_true = 2.0
 y_true = line(x_data, c_true, m_true)
