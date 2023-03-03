@@ -8,7 +8,7 @@ def line(x, c, m):
     return m*x + c
     
 def custom_chisq(c, m):
-    """ Chi-squared function to be minimized"""
+    """ Chi-squared function to be minimized """
     ym = line(x_data, c, m)
     z = (y_data - ym)/yerr_data
 #    print('ym = ',ym)
