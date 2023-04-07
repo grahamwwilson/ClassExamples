@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import myPythonCheck
-import pendArgs
+import pendArgs                 # argument parsing
 from stepper import Stepper     # ODE stepping algorithm
 import pendulumODE as p         # ODE specific functions
 #
