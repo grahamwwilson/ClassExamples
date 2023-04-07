@@ -16,9 +16,6 @@ this specific ODE problem. Functions include
 calcGradients, T0, Texact, Energy, PrintState, PrintHeader, PrintStep, 
 PrintHeaderError, PrintStepError
 
-## pendArgs.py
-Used for passing arguments
-
 ## stepper.py
 Generic stepping algorithms. 
 You should code up RK4 yourself. You could also add error estimates 
@@ -31,3 +28,7 @@ It is currently configured to use pendulumODE.calcGradients.
 python3 plot.py
 
 Plots some of the data from pendulum.dat using matplotlib
+
+## old/pendulum.py
+Older implementation with more clunky and less explicit argument parsing.
+Not recommended.
