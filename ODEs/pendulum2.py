@@ -11,7 +11,7 @@ def main(theta, omega, g, l, dt, sMethod, tMax, ofname):
 #
     ofile = open(ofname, "w")
 
-    y0 = np.array( [ theta, omega ])
+    y0 = np.array( [ theta*np.pi/180.0, omega ])
     y  = np.copy(y0)   # Set initial values
 
     parameters = [g, l]
