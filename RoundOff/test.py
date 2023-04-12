@@ -5,5 +5,5 @@ h = 1.0
 one = 1.0
 for i in range(65):
     x = one + h
-    print('Loop index',i,' h:',h,' x=1+h:',x,' x-1: ',x-one)
+    print('Loop index',i, ' h:',h, ' x=1+h:',x, ' x-1: ',x-one)
     h = h/2.0   
