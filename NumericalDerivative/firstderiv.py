@@ -8,6 +8,15 @@ import myPythonCheck
 def f(x):
     return math.sin(x)
     
+def ForwardNaive(x0,h):
+
+    x1 = x0 + h
+#    h = x1 - x0
+    
+    fprime = (f(x1) - f(x0))/h
+
+    return fprime    
+    
 def Forward(x0,h):
 
     x1 = x0 + h
@@ -54,6 +63,10 @@ def main(algorithm, h):
     
     x0 = math.pi/3.0
     
+    if algorithm==-1:
+        fprime = ForwardNaive(x0,h)
+        MyPrint(algorithm,fprime)    
+    
     if algorithm==0:
         fprime = Forward(x0,h)
         MyPrint(algorithm,fprime)
@@ -75,7 +88,7 @@ if __name__ == '__main__':
     myPythonCheck.Check()   #  Enforce use of python3
 
     parser = argparse.ArgumentParser(description="Numerical First Derivative")
-    parser.add_argument("-a", "--a",  type=int,   default=0,    help="Algorithm method (0=FD, 1=BD, 2=CD, 3=FO") 
+    parser.add_argument("-a", "--a",  type=int,   default=-1,    help="Algorithm method (0=FD, 1=BD, 2=CD, 3=FO") 
     parser.add_argument("-s", "--s",  type=float, default=0.1,  help="Step size")
     
     args=parser.parse_args()
