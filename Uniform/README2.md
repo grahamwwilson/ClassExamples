@@ -2,6 +2,9 @@
 
 ## Examples of MC integration
 
+## HitAndMissMC.py
+Hit and miss example with output in HitAndMissMC.out
+
 ## StandardMC.py
 Original basic implementation with output in StandardMC.out
 
