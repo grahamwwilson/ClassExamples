@@ -1,4 +1,4 @@
-# ClassExamples/Uniform
+# ClassExamples/Uniform 
 
 ## Examples of MC integration
 

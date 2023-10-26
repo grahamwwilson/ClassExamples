@@ -1,4 +1,4 @@
-# Integrate cos(pi x/2) from (0,1)
+# Integrate cos(pi x/2) from (0,1) 
 ----------------------------------
 
 HitAndMissMC.py 
