@@ -14,3 +14,5 @@ Use (1-x^2) importance sampling distribution with output in Importance.out
 ## ImportancePrime.py
 Use 1 -ax^2 + bx^4 importance sampling distribution with output in ImportancePrime.out
 
+## MCSummaries.txt
+Summary of the results of running these four examples
