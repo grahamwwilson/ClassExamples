@@ -1,0 +1,16 @@
+Executing the MyRandom.py main conditional statements
+Found argument list:  Namespace(ngen=1000000, plotfile='pie2.png', seed=400, which='pie2')
+ 
+Summary based on 1000000 instances
+Observed mean  0.785025
+Observed s.d.  0.41080520704577017  +-  0.0004108054124485278
+Observed variance  0.1687609181359181  +-  0.00023866409855843008
+RESULT <x> =  0.785025  +-  0.00041080520704577016
+    
+Measured value of pi =  3.1401 +- 0.0016432208281830806
+    
+Fractional Uncertainty  0.0005233020694191525
+Deviation               -0.0014926535897932247
+Fractional Deviation    -0.00047512639427890795
+% deviation             -0.047512639427890795
+Standardized Deviation  -0.9083706609559355
