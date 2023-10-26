@@ -1,0 +1,8 @@
+ 
+Summary based on 665503 samples using SEED 203
+Observed mean  0.6366162779994861
+Observed rms and variance 0.03149191383356644 0.0009917406369007733
+RESULT <g> =  0.6366162779994861  +-  3.860326567283759e-05
+Acceptance efficiency  0.665503
+Correct result =  0.6366197723675814
+Normalized deviation, z =  -0.09052001260565672  standard deviations
