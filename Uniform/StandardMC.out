@@ -1,0 +1,7 @@
+ 
+Summary based on 1000000 samples using SEED 203
+Observed mean  0.6361362084507644
+Observed rms and variance 0.30784051065977974 0.09476578000327396
+RESULT <g> =  0.6361362084507644  +-  0.00030784051065977974
+Correct result =  0.6366197723675814
+Normalized deviation, z =  -1.5708261261022214  standard deviations
