@@ -16,7 +16,7 @@ pvalueArgs.showArgs(chsq, ndof)
 
 pvaluepercent = 100.0*(1.0 - stats.chi2.cdf(chsq, ndof ))
 print(' ')
-print('Observed chi-squared p-value of',pvaluepercent,'% (q-value = ',100.0-pvaluepercent,'%)')
+print('Observed chi-squared p-value of',pvaluepercent,'%')
 
 # Also calculate standardized z-score
 # note that this retains the intrinsic asymmetry of the chi-squared distribution
@@ -28,7 +28,3 @@ print(' Normalized deviation = ',z)
 # when the model is correct. One therefore needs to have 
 # a low p-value to have significant evidence to reject the  
 # null hypothesis.
-#
-# Also printed is the complement (1-p) which I call the "q-value"
-# 
-#
