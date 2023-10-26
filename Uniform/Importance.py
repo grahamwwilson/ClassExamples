@@ -22,8 +22,8 @@ for i in range(NTRIES):
         N +=1
         h = math.cos(0.5*math.pi*u)  # the original integrand
         fp = 1.5*(1.0-u**2)          # the sampling pdf
-        g = h/fp                     # the new integrand to be sampled with random variables from the fp distribution
-        gsum += g
+        g = h/fp                     # the new integrand to be sampled with -
+        gsum += g                    # random variables from the fp distribution
         ggsum += g*g
 
 # Calculate post-generation statistics
