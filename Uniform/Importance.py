@@ -18,7 +18,7 @@ for i in range(NTRIES):
 # Use hit and miss to keep values of u that follow p(u) = 1.5 (1 - u**2)
     ytest = 1.5*random.uniform(0.0,1.0) 
     y = 1.5*(1.0-u**2)
-    if (y > ytest):                 # u is thus in the acceptance region
+    if (y > ytest):                  # u is thus in the acceptance region
         N +=1
         h = math.cos(0.5*math.pi*u)  # the original integrand
         fp = 1.5*(1.0-u**2)          # the sampling pdf
