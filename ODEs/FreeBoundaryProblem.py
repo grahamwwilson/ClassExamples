@@ -31,8 +31,7 @@ def f(z, y, params):
     """
     theta, omega, Tint = y                   # unpack current values of y
     g, l = params                            # unpack parameters
-    w0sq = g/l
-    derivs = [omega*Tint, -w0sq*Tint*np.sin(theta), 0.0]
+    derivs = [omega*Tint, -(g/l)*Tint*np.sin(theta), 0.0]
     return derivs
     
 def fzero(Tint):
@@ -46,37 +45,30 @@ def fzero(Tint):
     # Bundle parameters and initial conditions for ODE solver
     params = [G, L]                        # parameters
     y0 = [theta0, omega0, Tint]            # initial conditions
-    soln = solve_ivp(f, z_span, y0, rtol=100*EPS, atol=1.0e-16, dense_output=True, t_eval=times, method='DOP853', args=(params,))
-    z    = soln.t
+    soln = solve_ivp(f, z_span, y0, rtol=100*EPS, atol=1.0e-16, dense_output=True, 
+                     t_eval=times, method='DOP853', args=(params,)) # Dormand-Prince 8th order
+    z       = soln.t
     q, w, T = soln.y    
-    return q[100]         # theta value at end-point
+    return q[100]         # theta value at end-point - we want this to be zero.
     
 EPS = np.finfo(float).eps                    # machine precision - around 2.2e-16
+print('EPS = ',EPS)
 
 parser = argparse.ArgumentParser(description='Pendulum Timer Simulator with ODE')
 parser.add_argument("-q", "--theta0", type=float, default=math.pi/3, help="Initial angle (rad)")
-
 args=parser.parse_args()
 print('Found argument list: ')
 print(args)
 theta0=args.theta0      # Initial angle (rad)
 
-oscillationsfile = open("Oscillations.dat", "w")
-print('# i       time[s]       theta[rad]      omega[rad/s]      ',
-      ' Energy[%]       theta_0[rad]        omega_0[rad/s]       ',
-      'drag-induced angular acceleration  [rad/s^2]',
-      file=oscillationsfile)  # File header
-
 # Parameters
 G = 9.80      # acceleration due to gravity [m/s^2]
 L = 1.5       # pendulum length
     
-omega0 = 0.0       # initial angular velocity [rad/s]
-EoverM0 = G*L*(1.0 - np.cos(theta0))  # Initial value of E/m
-w0sq = G/L                    # pendulum angular frequency squared [rad^2/s^2]
-wmaxsq = 2.0*w0sq*(1.0-math.cos(theta0))  # max angular velocity squared assuming no drag
+omega0 = 0.0  # initial angular velocity [rad/s]
+w0sq = G/L    # pendulum angular frequency squared [rad^2/s^2]
 
-print('Defined parameters ',G,L,theta0,wmaxsq)
+print('Defined parameters ',G,L,theta0)
 
 # Derived quantities.
 w0 = np.sqrt(w0sq)
@@ -96,18 +88,18 @@ params = [G, L]             # parameters
 # using a scipy root-finding algorithm  (scipy.optimize.newton)
 # Here we basically adjust the integration time of the ODE until theta(Tint) = 0.0 rad
 # (ie. until the pendulum has fallen to the vertical position).
-
 Tfound = newton(fzero, Tguess-0.05, tol=EPS, x1=Tguess+0.1)  # Find zero
 
-# Repeat the ODE evaluation using this value of the quarter period reporting 101 values of the trajectory parameters.
+# Repeat the ODE evaluation using this value of the quarter period 
+# and report 101 values of the trajectory parameters.
 print('Tfound = ',Tfound,type(Tfound))
 y0 = [theta0, omega0, Tfound]
 zStart = 0.0
 zStop =  1.0
 times = np.linspace(zStart,zStop,101)
 z_span = [zStart, zStop]
-soln = solve_ivp(f, z_span, y0, rtol=100*EPS, atol=1.0e-16, dense_output=False, t_eval=times, method='DOP853', args=(params,))
+soln = solve_ivp(f, z_span, y0, rtol=100*EPS, atol=1.0e-16, dense_output=False, 
+                 t_eval=times, method='DOP853', args=(params,))
 
 PrintSoln2(soln)
-
-print("Fractional error: ",(Tfound-(Texact/4.0))/(Texact/4.0))   
+print("Fractional error in 1/4 period: ",(Tfound-(Texact/4.0))/(Texact/4.0))   

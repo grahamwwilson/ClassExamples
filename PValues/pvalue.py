@@ -22,7 +22,7 @@ print('Observed chi-squared p-value of',pvaluepercent,'%')
 # note that this retains the intrinsic asymmetry of the chi-squared distribution
 # and is NOT the Gaussian equivalent z-score from the p-value.
 z = (chsq - ndof)/np.sqrt(2.0*ndof)
-print(' Normalized deviation = ',z)
+print('Normalized deviation = ',z)
 
 # A p-value exceeding 5% say should happen 95% of the time 
 # when the model is correct. One therefore needs to have 
