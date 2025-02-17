@@ -7,8 +7,14 @@ from scipy import stats
 
 myPythonCheck.Check()                         # Enforce use of python3
 
-chsq, ndof = pvalueArgs.getArguments(None)
-pvalueArgs.showArgs(chsq, ndof)
+which, value, ndof = pvalueArgs.getArguments(None)
+pvalueArgs.showArgs(which, value, ndof)
+chsq = value
+if which==1:
+    print('Using reduced chi-squared as input value')
+    chsq = value*ndof
+    
+print('chisq = ',chsq)    
 
 # Calculate upper tail probability assuming the 
 # observed chi**2 value, chisq, is a random variate from 
