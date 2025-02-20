@@ -1,12 +1,11 @@
 import random
 import math
 import argparse
-import numpy as np
 from scipy import stats
 
 def StandardGaussian(x):
     """ Standard normal distribution probability density function """
-    f = (1.0/math.sqrt(2.0*math.pi))*np.exp(-0.5*x**2)
+    f = (1.0/math.sqrt(2.0*math.pi))*math.exp(-0.5*x**2)
     return f
     
 def exampleGaussian(ngen, seed):
@@ -60,8 +59,10 @@ def exampleGaussian(ngen, seed):
     I2 = integrationVolume*fmean
     dI2 = integrationVolume*error
     
-    print('Integral Method 1 deviation, percent uncertainty, significance',(I1 - Itrue),' ',100.0*dI1/Itrue,'% ',(I1-Itrue)/dI1,'sigma')
-    print('Integral Method 2 deviation, percent uncertainty, significance',(I2 - Itrue),' ',100.0*dI2/Itrue,'% ',(I2-Itrue)/dI2,'sigma')    
+    print('Integral Method 1 deviation, percent uncertainty, significance',
+          (I1 - Itrue),' ',100.0*dI1/Itrue,'% ',(I1-Itrue)/dI1,'sigma')
+    print('Integral Method 2 deviation, percent uncertainty, significance',
+          (I2 - Itrue),' ',100.0*dI2/Itrue,'% ',(I2-Itrue)/dI2,'sigma')    
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Random number generation')
