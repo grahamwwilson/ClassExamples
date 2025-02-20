@@ -4,7 +4,7 @@ import argparse
 from scipy import stats
 
 def StandardGaussian(x):
-    """ Standard normal distribution probability density function """
+    """ Probability density function of the standard normal distribution"""
     f = (1.0/math.sqrt(2.0*math.pi))*math.exp(-0.5*x**2)
     return f
     
@@ -34,7 +34,7 @@ def exampleGaussian(ngen, seed):
             nhits +=1   # accept
     print('nhits = ',nhits,' Efficiency = ',100.0*float(nhits)/float(ngen),'%')
     phit = float(nhits)/float(ngen)
-    perr  = math.sqrt(phit*(1.0-phit)/float(ngen))
+    perr  = math.sqrt(phit*(1.0-phit)/float(ngen))   # Binomial uncertainty
     print('Integral Method 1 (Hit/Miss)',area*phit,' +- ',area*perr)    
                 
 # Second loop for MC integration by averaging the function (Method 2)
@@ -48,21 +48,28 @@ def exampleGaussian(ngen, seed):
          
     fmean = fsum/float(ngen)
     ffmean = ffsum/float(ngen) 
-    varf = ffmean - fmean**2    
-    print('<f> = ',fmean,'rms = ',math.sqrt(varf))
+    varf = ffmean - fmean**2            # Measured variance of f
+    print('<f> = ',fmean,'standard deviation = ',math.sqrt(varf))
 
-    error = math.sqrt(varf/float(ngen))
-    print('Integral Method 2 (MC      )',integrationVolume*fmean,' +- ',integrationVolume*error)
+    error = math.sqrt(varf/float(ngen)) # Standard error on the mean of f
+    print('Integral Method 2 (MC fcn. average)',integrationVolume*fmean,' +- ',integrationVolume*error)
     
     I1 = area*phit
     dI1 = area*perr
     I2 = integrationVolume*fmean
     dI2 = integrationVolume*error
     
-    print('Integral Method 1 deviation, percent uncertainty, significance',
-          (I1 - Itrue),' ',100.0*dI1/Itrue,'% ',(I1-Itrue)/dI1,'sigma')
-    print('Integral Method 2 deviation, percent uncertainty, significance',
-          (I2 - Itrue),' ',100.0*dI2/Itrue,'% ',(I2-Itrue)/dI2,'sigma')    
+    print('  ')
+    print('Integral Method 1 (Hit & Miss) ')
+    print('deviation   :', I1-Itrue)
+    print('%uncertainty:', 100.0*dI1/Itrue,'%')
+    print('significance:', (I1-Itrue)/dI1,'sigma')
+    
+    print('  ')
+    print('Integral Method 2 (MC fcn. average)')
+    print('deviation   :', I2-Itrue)
+    print('%uncertainty:', 100.0*dI2/Itrue,'%')
+    print('significance:', (I2-Itrue)/dI2,'sigma')    
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Random number generation')
