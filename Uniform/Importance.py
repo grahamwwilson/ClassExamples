@@ -6,7 +6,7 @@ import math
 # Using fp = 1.5(1 - x^2) for the sampling distribution.
 #
 
-SEED = 203
+SEED = 204
 random.seed(SEED)       # Initialize random number generator using specified seed
 NTRIES = 1000000        # Number of random numbers to generate
 gsum = 0.0
