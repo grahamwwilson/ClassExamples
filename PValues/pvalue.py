@@ -10,14 +10,16 @@ myPythonCheck.Check()                         # Enforce use of python3
 which, value, ndof = pvalueArgs.getArguments(None)
 pvalueArgs.showArgs(which, value, ndof)
 chsq = value
-if which==1:
-    print('Using reduced chi-squared as input value')
+if which==0:
+    print('Using chi-squared as input value') # standard method
+else:
+    print('Using reduced chi-squared (chsq/ndof) as input value')
     chsq = value*ndof
-    
+
 print('chisq = ',chsq)    
 
 # Calculate upper tail probability assuming the 
-# observed chi**2 value, chisq, is a random variate from 
+# observed chi**2 value, chisq, is a random variable from 
 # the Chi-Squared distribution with ndof degrees of freedom
 
 pvaluepercent = 100.0*(1.0 - stats.chi2.cdf(chsq, ndof ))
@@ -28,7 +30,7 @@ print('Observed chi-squared p-value of',pvaluepercent,'%')
 # note that this retains the intrinsic asymmetry of the chi-squared distribution
 # and is NOT the Gaussian equivalent z-score from the p-value.
 z = (chsq - ndof)/np.sqrt(2.0*ndof)
-print('Normalized deviation = ',z)
+print('Normalized deviation (x - ndof)/sqrt(2 ndof) = ',z)
 
 # A p-value exceeding 5% say should happen 95% of the time 
 # when the model is correct. One therefore needs to have 
